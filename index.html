@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BullsEye Brand Blueprint™ — Reports</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:#0e0b1f;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px}
+.eyebrow{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(162,159,54,0.7);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:24px;height:1px;background:rgba(162,159,54,0.5)}
+h1{font-family:"Oswald",sans-serif;font-size:clamp(36px,6vw,72px);font-weight:600;text-transform:uppercase;letter-spacing:-1px;line-height:.92;margin-bottom:8px}
+h1 span{-webkit-text-stroke:1px rgba(255,255,255,0.25);color:transparent;display:block}
+h1 em{color:#e281ba;font-style:normal;display:block}
+.sub{font-family:"Lato",sans-serif;font-size:14px;color:rgba(255,255,255,0.35);margin-bottom:56px;font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:100%;max-width:640px}
+.card{background:rgba(150,36,129,0.1);border:1px solid rgba(150,36,129,0.25);border-radius:12px;padding:28px 30px;text-decoration:none;color:#fff;transition:background .2s,border-color .2s,transform .15s}
+.card:hover{background:rgba(150,36,129,0.18);border-color:rgba(150,36,129,0.5);transform:translateY(-3px)}
+.card-score{font-family:"Playfair Display",serif;font-size:36px;font-weight:700;color:#e281ba;line-height:1;margin-bottom:4px}
+.card-level{font-family:"Oswald",sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(162,159,54,0.7);margin-bottom:14px}
+.card-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;margin-bottom:4px}
+.card-biz{font-family:"Lato",sans-serif;font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:18px}
+.card-link{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e281ba}
+.footer-note{margin-top:48px;font-family:"Oswald",sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.15)}
+</style>
+</head>
+<body>
+<div class="eyebrow">The Brand CEO · Mallika Malhotra</div>
+<h1>BullsEye<span>Brand</span><em>Blueprint™</em></h1>
+<p class="sub">Personalized brand strategy reports</p>
+<div class="cards">
+  <a class="card" href="/brandi-scott/">
+    <div class="card-score">75%</div>
+    <div class="card-level">Brand-Strong</div>
+    <div class="card-name">Brandi Scott</div>
+    <div class="card-biz">Brandi Scott PhD LLC</div>
+    <div class="card-link">View Report →</div>
+  </a>
+  <a class="card" href="/lori-young/">
+    <div class="card-score">100%</div>
+    <div class="card-level">Brand-Ready</div>
+    <div class="card-name">Lori Young</div>
+    <div class="card-biz">On a Mission Brands LLC</div>
+    <div class="card-link">View Report →</div>
+  </a>
+</div>
+<div class="footer-note">Confidential · thebrandceo.com</div>
+</body>
+</html>
