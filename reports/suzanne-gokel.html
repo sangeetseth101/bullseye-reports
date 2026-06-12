@@ -821,23 +821,25 @@ function generatePDF(){
   var old = document.getElementById("print-frame");
   if(old) old.parentNode.removeChild(old);
 
+  var PAGE_W = 1040;
+
   var iframe = document.createElement("iframe");
   iframe.id = "print-frame";
-  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:0;height:0;border:none;";
+  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:"+PAGE_W+"px;height:100px;border:none;";
   document.body.appendChild(iframe);
 
   var styleEl = document.querySelector("style");
   var reportHTML = document.getElementById("report-wrap").innerHTML;
 
   var printOverrides = "" +
-    "@page{size:auto;margin:0}" +
-    "body{padding-top:0!important}" +
+    "html,body{width:"+PAGE_W+"px!important;margin:0!important;padding:0!important}" +
     ".dl,.cp-section-strip{display:none!important}" +
     ".cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}" +
     ".cp-header{display:none!important}" +
     "hr.divider{display:none!important}" +
-    ".section{page-break-before:auto!important;break-before:auto!important;padding:48px 0!important}" +
+    ".section{page-break-before:auto!important;break-before:auto!important;page-break-inside:avoid!important;padding:48px 0!important}" +
     "section.bs{page-break-before:auto!important;break-before:auto!important}" +
+    ".ppt-card,.pc,.pos-b,.upsell-card,.cp-r,.wi,.mh-row,.pain-card{page-break-inside:avoid!important}" +
     "@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}";
 
   var doc = '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
@@ -851,10 +853,20 @@ function generatePDF(){
   iframe.contentDocument.close();
 
   setTimeout(function(){
-    iframe.contentWindow.focus();
-    iframe.contentWindow.print();
-    btn.innerHTML = "&#8659; Save as PDF";
-    btn.style.pointerEvents = "";
+    var idoc = iframe.contentDocument;
+    var totalH = Math.ceil(idoc.documentElement.scrollHeight);
+    iframe.style.height = totalH + "px";
+
+    var pageStyle = idoc.createElement("style");
+    pageStyle.textContent = "@page{size:" + PAGE_W + "px " + totalH + "px; margin:0}";
+    idoc.head.appendChild(pageStyle);
+
+    setTimeout(function(){
+      iframe.contentWindow.focus();
+      iframe.contentWindow.print();
+      btn.innerHTML = "&#8659; Save as PDF";
+      btn.style.pointerEvents = "";
+    }, 300);
   }, 1000);
 }
 (function(){
