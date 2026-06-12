@@ -852,22 +852,48 @@ function generatePDF(){
   iframe.contentDocument.write(doc);
   iframe.contentDocument.close();
 
+  function setPageSize(idoc, w){
+    var h = Math.ceil(idoc.documentElement.scrollHeight);
+    iframe.style.height = h + "px";
+    var old = idoc.getElementById("dyn-page-style");
+    if(old) old.remove();
+    var pageStyle = idoc.createElement("style");
+    pageStyle.id = "dyn-page-style";
+    pageStyle.textContent = "@page{size:" + w + "px " + h + "px; margin:0}";
+    idoc.head.appendChild(pageStyle);
+    return h;
+  }
+
+  function waitForImages(idoc, cb){
+    var imgs = idoc.querySelectorAll("img");
+    var pending = 0;
+    imgs.forEach(function(img){
+      if(!img.complete){
+        pending++;
+        img.addEventListener("load", done);
+        img.addEventListener("error", done);
+      }
+    });
+    function done(){ pending--; if(pending<=0) cb(); }
+    if(pending===0) cb();
+  }
+
   setTimeout(function(){
     var idoc = iframe.contentDocument;
-    var totalH = Math.ceil(idoc.documentElement.scrollHeight);
-    iframe.style.height = totalH + "px";
-
-    var pageStyle = idoc.createElement("style");
-    pageStyle.textContent = "@page{size:" + PAGE_W + "px " + totalH + "px; margin:0}";
-    idoc.head.appendChild(pageStyle);
-
-    setTimeout(function(){
-      iframe.contentWindow.focus();
-      iframe.contentWindow.print();
-      btn.innerHTML = "&#8659; Save as PDF";
-      btn.style.pointerEvents = "";
-    }, 300);
-  }, 1000);
+    waitForImages(idoc, function(){
+      setPageSize(idoc, PAGE_W);
+      // re-measure after layout settles (fonts etc.)
+      setTimeout(function(){
+        setPageSize(idoc, PAGE_W);
+        setTimeout(function(){
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          btn.innerHTML = "&#8659; Save as PDF";
+          btn.style.pointerEvents = "";
+        }, 250);
+      }, 400);
+    });
+  }, 600);
 }
 (function(){
   var d = new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
