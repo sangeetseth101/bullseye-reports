@@ -18,6 +18,13 @@
 html{scroll-behavior:smooth}
 body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;font-size:19px;line-height:1.75}
 
+/* ── PDF EXPORT MODE ── */
+body.pdf-export .dl{display:none!important}
+body.pdf-export .cp-section-strip{display:none!important}
+body.pdf-export .cp-header{display:none!important}
+body.pdf-export .cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}
+body.pdf-export hr.divider{display:none!important}
+
 /* ── DL BAR ── */
 .dl{position:fixed;top:0;left:0;right:0;z-index:999;height:56px;background:rgba(253,250,246,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 44px}
 .dl-left{display:flex;align-items:center;gap:12px}
@@ -660,84 +667,33 @@ body.pdf-mode .cta-section{page-break-before:always!important}
 <script>
 function generatePDF(){
   var btn = document.getElementById("pdf-btn");
-  btn.textContent = "Preparing\u2026";
+  btn.textContent = "Generating\u2026";
   btn.style.pointerEvents = "none";
 
-  var old = document.getElementById("print-frame");
-  if(old) old.parentNode.removeChild(old);
-
-  var PAGE_W = 1040;
-
-  var iframe = document.createElement("iframe");
-  iframe.id = "print-frame";
-  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:"+PAGE_W+"px;height:100px;border:none;";
-  document.body.appendChild(iframe);
-
-  var styleEl = document.querySelector("style");
-  var reportHTML = document.getElementById("report-wrap").innerHTML;
-
-  var printOverrides = "" +
-    "html,body{width:"+PAGE_W+"px!important;margin:0!important;padding:0!important}" +
-    ".dl,.cp-section-strip{display:none!important}" +
-    ".cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}" +
-    ".cp-header{display:none!important}" +
-    "hr.divider{display:none!important}" +
-    ".section{page-break-before:auto!important;break-before:auto!important;padding:48px 0!important}" +
-    "section.bs{page-break-before:auto!important;break-before:auto!important}" +
-    "@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}";
-
-  var doc = '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
-    '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">' +
-    '<style>' + styleEl.textContent + printOverrides + '</style></head><body>' +
-    reportHTML +
-    '</body></html>';
-
-  iframe.contentDocument.open();
-  iframe.contentDocument.write(doc);
-  iframe.contentDocument.close();
-
-  function setPageSize(idoc, w){
-    var h = Math.ceil(idoc.documentElement.scrollHeight) + 30;
-    iframe.style.height = h + "px";
-    var old = idoc.getElementById("dyn-page-style");
-    if(old) old.remove();
-    var pageStyle = idoc.createElement("style");
-    pageStyle.id = "dyn-page-style";
-    pageStyle.textContent = "@page{size:" + w + "px " + h + "px; margin:0}";
-    idoc.head.appendChild(pageStyle);
-    return h;
-  }
-
-  function waitForImages(idoc, cb){
-    var imgs = idoc.querySelectorAll("img");
-    var pending = 0;
-    imgs.forEach(function(img){
-      if(!img.complete){
-        pending++;
-        img.addEventListener("load", done);
-        img.addEventListener("error", done);
-      }
-    });
-    function done(){ pending--; if(pending<=0) cb(); }
-    if(pending===0) cb();
-  }
+  var wrap = document.getElementById("report-wrap");
+  document.body.classList.add("pdf-export");
 
   setTimeout(function(){
-    var idoc = iframe.contentDocument;
-    waitForImages(idoc, function(){
-      setPageSize(idoc, PAGE_W);
-      // re-measure after layout settles (fonts etc.)
-      setTimeout(function(){
-        setPageSize(idoc, PAGE_W);
-        setTimeout(function(){
-          iframe.contentWindow.focus();
-          iframe.contentWindow.print();
-          btn.innerHTML = "&#8659; Save as PDF";
-          btn.style.pointerEvents = "";
-        }, 250);
-      }, 400);
+    var w = wrap.scrollWidth;
+    var h = wrap.scrollHeight;
+
+    html2pdf(wrap, {
+      margin: 0,
+      filename: "BullsEye-Brand-Blueprint-Suzanne-Gokel.pdf",
+      image: {type:"jpeg", quality:0.98},
+      html2canvas: {scale:1.5, useCORS:true, windowWidth:w, width:w, height:h, scrollY:0},
+      jsPDF: {unit:"px", format:[w,h], orientation:"portrait"},
+      pagebreak: {mode:["avoid-all"]}
+    }).then(function(){
+      document.body.classList.remove("pdf-export");
+      btn.innerHTML = "&#8659; Save as PDF";
+      btn.style.pointerEvents = "";
+    }).catch(function(){
+      document.body.classList.remove("pdf-export");
+      btn.innerHTML = "&#8659; Save as PDF";
+      btn.style.pointerEvents = "";
     });
-  }, 600);
+  }, 100);
 }
 (function(){
   var d = new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
