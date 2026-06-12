@@ -697,7 +697,7 @@ function generatePDF(){
   iframe.contentDocument.close();
 
   function setPageSize(idoc, w){
-    var h = Math.ceil(idoc.documentElement.scrollHeight);
+    var h = Math.ceil(idoc.documentElement.scrollHeight) + 30;
     iframe.style.height = h + "px";
     var old = idoc.getElementById("dyn-page-style");
     if(old) old.remove();
