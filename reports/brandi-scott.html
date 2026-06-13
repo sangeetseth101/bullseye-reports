@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BullsEye Brand Blueprint™ — Brandi Scott</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FDFAF6;--cream-2:#F7F2EC;--cream-3:#F0E9FD;
+  --magenta:#962481;--magenta-h:#b82e9a;--magenta-pale:#F9EDF7;--magenta-mid:#EDD5F0;
+  --gold:#8a8520;--gold-l:#a29f36;--gold-pale:#F8F6E3;
+  --navy:#201454;--navy-2:#2e1f72;
+  --muted:#6a6090;--muted-light:#8a7fa8;--border:#E8E0F4;--white:#fff;
+  --body:#3a3060;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;font-size:19px;line-height:1.75}
+
+/* ── DL BAR ── */
+.dl{position:fixed;top:0;left:0;right:0;z-index:999;height:56px;background:rgba(253,250,246,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.dl-left{display:flex;align-items:center;gap:12px}
+.dl-txt{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.dl-logo-h{height:32px;object-fit:contain}
+.dl-btn{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:var(--magenta);color:#fff;border:none;padding:10px 22px;cursor:pointer;border-radius:100px;transition:background .2s}
+.dl-btn:hover{background:var(--magenta-h)}
+
+/* ── COVER PAGE ── */
+.cover-page{position:relative;overflow:hidden;display:flex;flex-direction:column;height:100vh;max-height:100vh;background:linear-gradient(145deg,#fff 0%,#fdf5fb 40%,#f5edf8 100%);border-bottom:3px solid var(--magenta)}
+.cp-deco-wrap{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:500px;height:500px;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.cp-deco-arc{width:100%;height:100%}
+.cp-circle-logo{position:absolute;width:130px;height:130px;border-radius:50%;object-fit:cover;z-index:2}
+.cp-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 56px;border-bottom:1px solid rgba(150,36,129,0.1);flex-shrink:0}
+.cp-header-date{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(32,20,84,0.5)}
+.cp-upper{flex:1;position:relative;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:3vh 60px;min-height:0}
+.cp-eyebrow{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.cp-eyebrow::before{display:block;content:"";width:28px;height:1px;background:var(--gold-l)}
+.cp-title{font-family:"Oswald",sans-serif;font-size:clamp(44px,7vw,90px);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-2px;color:var(--navy);margin-bottom:4px}
+.cp-title .ct2{display:block;-webkit-text-stroke:1.5px rgba(32,20,84,0.22);color:transparent}
+.cp-title .ct3{display:block;color:var(--magenta)}
+.cp-for-name{display:flex;align-items:center;gap:16px;margin:14px 0 20px}
+.cp-for-line{flex:0 0 36px;height:1px;background:rgba(150,36,129,0.3)}
+.cp-for-text{font-family:"Dancing Script",cursive;font-size:clamp(22px,3vw,36px);color:var(--body);font-weight:600}
+.cp-for-text em{color:var(--magenta);font-style:normal}
+.cp-tagline{font-family:"Lato",sans-serif;font-size:16px;color:rgba(32,20,84,0.6);line-height:1.7;max-width:500px;font-weight:300;font-style:italic}
+.cp-section-strip{position:relative;z-index:10;border-top:1px solid rgba(150,36,129,0.1);display:flex;overflow-x:auto;background:rgba(255,255,255,0.85);flex-shrink:0}
+.cp-ss-item{flex:1;padding:11px 12px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(150,36,129,0.07);font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .2s,background .2s}
+.cp-ss-item:last-child{border-right:none}
+.cp-ss-item:hover{color:var(--magenta);background:var(--magenta-pale)}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 44px}
+.section{padding:72px 0}
+.s-label{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--magenta);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.s-label::before{content:"";width:22px;height:1px;background:var(--magenta)}
+.s-h2{font-family:"Playfair Display",serif;font-size:38px;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:8px}
+.s-note{font-size:17px;color:var(--muted);font-style:italic;margin-bottom:40px}
+.divider{border:none;border-top:1px solid var(--border)}
+
+/* ── SNAPSHOT ── */
+.snap-box{background:var(--magenta-pale);border-radius:16px;padding:44px 48px;position:relative;overflow:hidden;border-left:4px solid var(--magenta)}
+.snap-q{font-family:"Playfair Display",serif;font-size:80px;font-weight:900;color:rgba(150,36,129,.12);line-height:.8;margin-bottom:-12px}
+.snap-body{font-size:19px;line-height:1.85;color:var(--navy);max-width:780px}
+.snap-body strong{color:var(--magenta)}
+
+/* ── PPT ── */
+.ppt-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.ppt-card{border-radius:14px;padding:34px 28px;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end}
+.pb-problem{background:linear-gradient(160deg,#fdf0f8 0%,#f5d0ec 100%)}
+.pb-promise{background:linear-gradient(160deg,#f8f3e6 0%,#ede5bc 100%)}
+.pb-transform{background:linear-gradient(160deg,var(--magenta-pale) 0%,var(--magenta-mid) 100%)}
+.ppt-bg-n{position:absolute;right:-8px;top:-20px;font-family:"Playfair Display",serif;font-size:130px;font-weight:900;opacity:.05;color:var(--navy);line-height:1;pointer-events:none}
+.ppt-icon{font-size:26px;margin-bottom:10px}
+.ppt-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.pb-problem .ppt-lbl{color:#962481}.pb-promise .ppt-lbl{color:var(--gold)}.pb-transform .ppt-lbl{color:var(--magenta)}
+.ppt-title{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.ppt-txt{font-size:15px;line-height:1.75;color:#4a3d6e}
+
+/* ── AUDIENCE ── */
+.aud-grid{display:grid;grid-template-columns:5fr 7fr;gap:44px}
+.aud-who{background:var(--magenta-pale);border-radius:12px;padding:30px;border-left:3px solid var(--magenta)}
+.aud-lbl{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:12px}
+.aud-txt{font-size:17px;line-height:1.85;color:var(--navy)}
+.pain-grid{display:grid;gap:12px}
+.pain-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.pain-qm{font-family:"Playfair Display",serif;font-size:32px;color:rgba(150,36,129,.18);line-height:1;flex-shrink:0;margin-top:-4px}
+.pain-txt{font-size:15px;line-height:1.7;color:var(--navy)}
+.pain-tag{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8a8520;display:block;margin-top:6px}
+
+/* ── BRAND AUDIT ── */
+.audit-legend{display:flex;gap:20px;margin-bottom:32px;padding:20px 24px;background:var(--white);border-radius:10px;border:1px solid var(--border)}
+.legend-item{display:flex;align-items:flex-start;gap:12px}
+.legend-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.legend-badge.strong{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.legend-badge.sharpening{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.legend-txt{font-size:15px;color:var(--body);line-height:1.6}
+.legend-txt strong{color:var(--navy)}
+.p4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px 22px;overflow:hidden;position:relative}
+.pc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:12px 12px 0 0}
+.pc.strong::before{background:#a29f36}.pc.sharpening::before{background:#962481}
+.pc-n{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted-light);margin-bottom:4px}
+.pc-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.pc-subtext{font-size:13px;color:var(--muted);margin-bottom:8px}
+.pc-badge-row{margin-bottom:12px}
+.pc-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block}
+.pc.strong .pc-badge{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.pc.sharpening .pc-badge{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.pc-claim{font-family:"Playfair Display",serif;font-style:italic;font-size:14px;line-height:1.65;color:var(--magenta);background:rgba(150,36,129,0.05);border-left:3px solid rgba(150,36,129,0.25);padding:12px 14px;margin-bottom:14px;border-radius:0 6px 6px 0}
+.pc-notes{list-style:none}
+.pc-notes li{font-size:14px;line-height:1.6;color:var(--body);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(150,36,129,0.06)}
+.pc-notes li:last-child{border-bottom:none}
+.pc-notes li::before{content:"→";position:absolute;left:0;color:var(--magenta);font-size:12px;top:6px}
+
+/* ── POSITIONING ── */
+.niche-hero{background:var(--magenta-pale);border-radius:16px;padding:44px 52px;margin-bottom:24px;position:relative;overflow:hidden;text-align:center;border:1px solid rgba(150,36,129,0.18)}
+.niche-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:16px}
+.niche-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy);max-width:760px;margin:0 auto}
+.pos3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.pos-b{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px}
+.pos-b-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:6px}
+.pos-b-ttl{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pos-b-txt{font-size:15px;line-height:1.8;color:var(--body)}
+.pos-b-txt strong{color:var(--navy);font-weight:700}
+.consideration-box{background:#fffbf0;border:1.5px solid #d4a017;border-radius:12px;padding:28px 32px;border-left:4px solid #d4a017}
+.consideration-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a6000;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.consideration-lbl::before{content:"⚠";font-size:14px}
+.consideration-ttl{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:#5a3e00;margin-bottom:10px}
+.consideration-txt{font-size:15px;line-height:1.8;color:#5a3e00}
+
+/* ── MESSAGING ── */
+.val-card{background:var(--magenta);border-radius:12px;padding:36px 40px;margin-bottom:32px;position:relative;overflow:hidden}
+.val-card::before{content:"C";font-family:"Playfair Display",serif;font-size:180px;position:absolute;right:24px;top:-24px;color:rgba(255,255,255,.07);line-height:1}
+.val-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.val-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:21px;line-height:1.75;color:#fff;position:relative;max-width:740px}
+.mh-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border);align-items:start}
+.mh-row:last-child{border-bottom:none}
+.mh-lv{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding-top:3px;font-weight:600}
+.mh-row:nth-child(1) .mh-lv{color:var(--magenta)}
+.mh-row:nth-child(2) .mh-lv{color:var(--gold)}
+.mh-row:nth-child(3) .mh-lv{color:var(--navy)}
+.mh-row:nth-child(4) .mh-lv{color:var(--muted)}
+.mh-txt{font-size:17px;line-height:1.8;color:var(--navy)}
+.mh-note{font-size:13px;color:var(--muted);font-style:italic;margin-top:4px}
+.bma-wrap{background:var(--navy);border-radius:14px;padding:40px 44px;margin-top:48px}
+.bma-eyebrow{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px}
+.bma-title{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px}
+.bma-sub{font-size:15px;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.bma-text{font-size:18px;line-height:2.0;color:#fff}
+.bma-em{background:var(--magenta);color:#fff;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-em2{background:rgba(162,159,54,0.28);color:#d4d16a;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0}
+
+/* ── VOICE ── */
+.voice-2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:28px}
+.v-head{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.is-c .v-head{color:#1a7a42}.not-c .v-head{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 18px;border-radius:100px}
+.is-c .tag{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.not-c .tag{background:var(--cream-2);color:var(--muted);border:1px solid var(--border)}
+.vs-box{background:var(--cream-3);border-radius:12px;padding:30px 36px;border-left:3px solid var(--magenta)}
+.vs-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.vs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy)}
+
+/* ── PILLARS ── */
+.cp-r{display:grid;grid-template-columns:72px 1fr 2fr;gap:26px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start}
+.cp-r:last-child{border-bottom:none}
+.cp-n{font-family:"Playfair Display",serif;font-size:44px;font-weight:900;color:rgba(150,36,129,.12);line-height:1}
+.cp-name{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.cp-msg{font-style:italic;font-size:14px;color:var(--magenta);margin-bottom:6px;line-height:1.55}
+.cp-ang{font-size:15px;line-height:1.75;color:var(--body)}
+.cp-ang span{display:block;padding:3px 0}
+.cp-ang span::before{content:"· ";color:var(--magenta);font-weight:700}
+
+/* ── BRAND STATEMENT ── */
+.bs{background:var(--magenta-pale);padding:80px 0;border-top:1px solid rgba(150,36,129,0.15);border-bottom:1px solid rgba(150,36,129,0.15)}
+.bs-inner{max-width:780px;margin:0 auto;padding:0 44px}
+.bs-top{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.bs-top::before,.bs-top::after{content:"";width:28px;height:1px;background:rgba(138,133,32,.45)}
+.bs-h{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--navy);margin-bottom:26px;line-height:1.15}
+.bs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:20px;line-height:1.85;color:var(--navy);margin-bottom:48px}
+.bs-txt strong{color:var(--magenta);font-style:normal;font-weight:700}
+/* Elevator Pitch — bigger, equal weight */
+.ep-block{background:var(--white);border:2px solid var(--magenta);border-radius:16px;padding:40px 44px}
+.ep-lbl{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ep-sub{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:20px}
+.ep-txt{font-size:19px;line-height:1.9;color:var(--body)}
+
+/* ── QUICK WINS ── */
+.wt{position:relative;padding-left:40px}
+.wt::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(var(--magenta),var(--border))}
+.wi{position:relative;margin-bottom:32px}
+.wi:last-child{margin-bottom:0}
+.wi-dot{position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--magenta);border:3px solid var(--cream);box-shadow:0 0 0 1px var(--magenta)}
+.wi-when{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:4px;font-weight:600}
+.wi-ttl{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.wi-desc{font-size:16px;line-height:1.75;color:var(--body)}
+
+/* ── BRAND FUTURE ── */
+.brand-future{background:var(--magenta);border-radius:16px;padding:56px 60px;text-align:center;position:relative;overflow:hidden;margin:80px 0}
+.brand-future::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(255,255,255,0.08) 0%,transparent 70%)}
+.bf-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:16px;position:relative}
+.bf-h{font-family:"Playfair Display",serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#fff;line-height:1.35;position:relative;max-width:760px;margin:0 auto}
+.bf-h em{font-style:italic;color:#f0c4e8}
+
+/* ── UPSELLS ── */
+.upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.upsell-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:16px}
+.upsell-card.featured{border-color:var(--magenta);border-width:2px}
+.upsell-type{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;width:fit-content}
+.upsell-card:first-child .upsell-type{background:rgba(150,36,129,0.08);color:var(--magenta)}
+.upsell-card.featured .upsell-type{background:var(--magenta);color:#fff}
+.upsell-price{font-family:"Playfair Display",serif;font-size:30px;font-weight:900;color:var(--navy);line-height:1}
+.upsell-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.upsell-tag{font-size:13px;color:var(--magenta);font-style:italic;margin-bottom:4px}
+.upsell-desc{font-size:15px;line-height:1.75;color:var(--body);flex:1}
+.upsell-btn{display:block;text-align:center;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:100px;transition:background .2s;margin-top:auto}
+.upsell-card:first-child .upsell-btn{background:var(--cream-2);color:var(--navy);border:1px solid var(--border)}
+.upsell-card:first-child .upsell-btn:hover{background:var(--border)}
+.upsell-card.featured .upsell-btn{background:var(--magenta);color:#fff}
+.upsell-card.featured .upsell-btn:hover{background:var(--magenta-h)}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);padding:32px 44px;display:flex;align-items:center;justify-content:space-between}
+.f-l{display:flex;align-items:center;gap:16px}
+.f-logo{height:40px;object-fit:contain}
+.f-brand{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.f-r{font-size:13px;color:rgba(255,255,255,.45);font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- DL BAR -->
+<div class="dl">
+  <img class="dl-logo-h" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  <button class="dl-btn" id="pdf-btn" onclick="generatePDF()">&#8659; Save as PDF</button>
+</div>
+
+<!-- REPORT WRAP -->
+<div id="report-wrap">
+
+<!-- COVER PAGE -->
+<section class="cover-page" id="top">
+  <div class="cp-deco-wrap">
+    <svg class="cp-deco-arc" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(150,36,129,0.07)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="195" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="rgba(150,36,129,0.1)" stroke-width="1.5"/>
+      <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(150,36,129,0.06)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="url(#lg1)" stroke-width="14" stroke-linecap="round" stroke-dasharray="993" stroke-dashoffset="350" transform="rotate(-90 250 250)" opacity="0.45"/>
+      <defs><linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e281ba" stop-opacity="0.7"/><stop offset="100%" stop-color="#962481" stop-opacity="0.7"/></linearGradient></defs>
+    </svg>
+    <img class="cp-circle-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781170598/the-brand-ceo.-sub-logo-circle-purple-brand-logos-rgb-1200px-w-300ppi_xovn8m.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+
+  <div class="cp-header">
+    <span class="cp-header-date" id="cover-date">—</span>
+  </div>
+
+  <div class="cp-upper">
+    <div class="cp-eyebrow">Your Personalized Brand Strategy</div>
+    <div class="cp-title">BullsEye<span class="ct2">Brand</span><span class="ct3">Blueprint™</span></div>
+    <div class="cp-for-name"><div class="cp-for-line"></div><div class="cp-for-text">for <em>Brandi Scott</em></div></div>
+    <p class="cp-tagline">Built from your answers. Personalized to your brand.<br>Ready to use yourself — or hand to any designer, copywriter, or launch team and say, "This is the direction."</p>
+  </div>
+
+  <div class="cp-section-strip">
+    <a href="#snapshot" class="cp-ss-item">Snapshot</a>
+    <a href="#ppt" class="cp-ss-item">Problem &amp; Promise</a>
+    <a href="#audience" class="cp-ss-item">Audience</a>
+    <a href="#brandread" class="cp-ss-item">Brand Audit</a>
+    <a href="#positioning" class="cp-ss-item">Positioning</a>
+    <a href="#messaging" class="cp-ss-item">Messaging</a>
+    <a href="#voice" class="cp-ss-item">Voice</a>
+    <a href="#pillars" class="cp-ss-item">Pillars</a>
+    <a href="#statement" class="cp-ss-item">Brand Statement</a>
+    <a href="#wins" class="cp-ss-item">Quick Wins</a>
+    <a href="#cta" class="cp-ss-item">Next Steps</a>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="section" id="snapshot">
+  <div class="wrap">
+    <div class="s-label">Where You Are Right Now</div>
+    <h2 class="s-h2">Your Brand Snapshot</h2>
+    <div class="snap-box">
+      <div class="snap-q">&ldquo;</div>
+      <p class="snap-body">Brandi, you bring something most consultants in this space simply don't have — a PhD in higher education leadership combined with 15+ years actually sitting in the senior leader's chair, navigating the exact turnover, change, and resource pressure your clients are living through right now. But your current brand language describes you the way every other "communication and leadership consultant for higher education" describes themselves — designing "professional development experiences that meet the needs of each team." That sentence could belong to anyone, and it hides the thing you're actually best at: finding the real problem underneath the one a client asked you to solve. This Blueprint gives you the language to name that — your audience, your method, and the exact moment a client realizes another training was never going to be enough. <strong>The shift: stop sounding like a generalist who runs workshops, and start sounding like the strategist who finds what's really going on underneath the request.</strong></p>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PPT -->
+<section class="section" id="ppt">
+  <div class="wrap">
+    <div class="s-label">Their Story Before They Find You</div>
+    <h2 class="s-h2">Problem · Promise · Transformation</h2>
+    <p class="s-note">Show your audience that you understand where they are now — and can help them get where they want to go.</p>
+    <div class="ppt-grid">
+      <div class="ppt-card pb-problem">
+        <div class="ppt-bg-n">01</div>
+        <div class="ppt-icon">🔍</div>
+        <div class="ppt-lbl">The Problem</div>
+        <div class="ppt-title">Another Training Won't Fix This</div>
+        <div class="ppt-txt">She's leading a staff through constant change — shrinking budgets, turnover, internal conflict, and a steady stream of state and federal policy shifts that ripple straight down to her team. She's already booked the trainings. Sometimes the same one twice, because it "didn't quite land" the first time. She's carrying her division's piece of the institution's mission and feels the weight of it daily, but she can't quite name what's actually breaking down — only that if she doesn't fix it, more people walk, and the team that's left gets stretched even thinner.</div>
+      </div>
+      <div class="ppt-card pb-promise">
+        <div class="ppt-bg-n">02</div>
+        <div class="ppt-icon">✦</div>
+        <div class="ppt-lbl">Your Promise</div>
+        <div class="ppt-title">A Layered Plan, Not Another Workshop</div>
+        <div class="ppt-txt">You sit down with her — sometimes with her whole leadership team — and listen first. You peel back the layers until you find what's actually underneath the request, not just what was asked for. From there, you build a plan that's layered: individual coaching for her, tailored development for her team, and assessment built in before, during, and after the work — so she leaves not with a one-time fix, but with a roadmap she can keep using long after you're gone.</div>
+      </div>
+      <div class="ppt-card pb-transform">
+        <div class="ppt-bg-n">03</div>
+        <div class="ppt-icon">◎</div>
+        <div class="ppt-lbl">The Transformation</div>
+        <div class="ppt-title">From Reactive to Rooted</div>
+        <div class="ppt-txt">Across every engagement, the same shift happens. Leaders stop reacting to the latest crisis and start seeing the pattern underneath it — and they get honest about which parts of it are actually theirs to fix. Their teams gain the language to name what they need and ask for it directly. And the leader walks away with clarity on her own gaps, a plan to close them, and the confidence to lead from her own values instead of from whatever fire is loudest that week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- AUDIENCE -->
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="s-label">Your Right-Fit Client</div>
+    <h2 class="s-h2">Who She Is — And What She Says to Herself at 2am</h2>
+    <p class="s-note">The more specifically you can describe her, the more she feels like you are speaking directly to her.</p>
+    <div class="aud-grid">
+      <div>
+        <div class="aud-who">
+          <div class="aud-lbl">Who She Is</div>
+          <div class="aud-txt">She's a director or senior leader on a college or university campus, overseeing a team of staff who directly support student outcomes and experiences. She's responsible for carrying her division's mission forward and aligning it with the institution's broader mission — which means she's constantly translating "big picture" pressure into something her team can actually act on. Underneath the title, she's navigating constant change, shrinking or shifting resources, turnover she didn't choose, and conflict between staff members she now has to manage. She feels the weight of her institution's mission and the federal and state policy changes reshaping higher education, but privately, she's not sure how to keep motivating a team that's already stretched thin — and she's quietly afraid that if she gets this wrong, the people she's worked hardest to support will be the ones who leave.</div>
+        </div>
+      </div>
+      <div>
+        <div class="aud-lbl" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:14px">What She Says to Herself at 2am</div>
+        <div class="pain-grid">
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">We already did the training on this. Why are we still having the same problem?<span class="pain-tag">USE FOR: HOOKS &amp; AD HEADLINES</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">If I don't figure out how to support my team through this, I'm going to lose more people — and I don't know how much more they have left to give.<span class="pain-tag">USE FOR: SALES PAGE / PROBLEM SECTION</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">I'm supposed to be carrying the mission forward, but some days I can't even get my own team aligned with each other.<span class="pain-tag">USE FOR: EMAIL SUBJECT LINES</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">Maybe this is on me. Maybe my own leadership is part of why this team feels so burnt out.<span class="pain-tag">USE FOR: CONTENT &amp; SPEAKING HOOKS</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND AUDIT -->
+<section class="section" id="brandread" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">The BullsEye Formula™</div>
+    <h2 class="s-h2">Your BullsEye Brand Audit</h2>
+    <p class="s-note">Four pillars. Where your brand is already working — and where the real opportunity lives.</p>
+    <div class="audit-legend">
+      <div class="legend-item">
+        <span class="legend-badge strong">Strong</span>
+        <div class="legend-txt"><strong>This is working.</strong> Your brand is clear and confident here. Keep building on it — this is where you have real authority.</div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-badge sharpening">Sharpening</span>
+        <div class="legend-txt"><strong>This has real potential.</strong> You have something here — it just needs to be named, clarified, or made more visible. This is your biggest growth opportunity.</div>
+      </div>
+    </div>
+    <div class="p4">
+      <div class="pc strong">
+        <div class="pc-n">Pillar 01</div><div class="pc-name">Specialize</div><div class="pc-subtext">Claim the expertise you want to be known for.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"The specific area of expertise I'm well known for is helping higher education leaders build the communication, collaboration, and prioritization skills their teams need to navigate constant change. When people think of systemic leadership development for college and university teams, they think of me."</div>
+        <ul class="pc-notes">
+          <li>A PhD in higher education leadership, plus 15+ years as a senior leader who has personally led teams through organizational change, turnover, and shifting state and federal funding.</li>
+          <li>Every part of the offer — individualized coaching for the leader, tailored professional development for the team, and pre/mid/post assessment — is built around this one focus, not scattered across unrelated services.</li>
+        </ul>
+      </div>
+      <div class="pc strong">
+        <div class="pc-n">Pillar 02</div><div class="pc-name">Specify</div><div class="pc-subtext">Define who you serve best and what they need most.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"I work primarily with directors and senior leaders on college campuses who struggle with leading their teams through constant change, turnover, and uncertainty, and who desire the confidence and clarity to carry their mission forward without burning out the staff who depend on them."</div>
+        <ul class="pc-notes">
+          <li>The audience is named precisely — directors and senior leaders overseeing teams that support student outcomes, accountable for aligning their division's mission with the institution's.</li>
+          <li>The internal struggle is named, too: the fear that unaddressed communication and collaboration issues will drive more turnover and overwhelm a team that's already stretched.</li>
+        </ul>
+      </div>
+      <div class="pc sharpening">
+        <div class="pc-n">Pillar 03</div><div class="pc-name">Stand Out</div><div class="pc-subtext">Turn your difference into a memorable reason to choose you.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Sharpening</span></div>
+        <div class="pc-claim">"Unlike other higher education consultants, people choose to work with Brandi Scott PhD LLC because we are unmatched in pairing real senior-leadership experience with research into the systemic challenges driving these problems — and because Brandi will ask a leader to look at her own role in the problem, not just her team's."</div>
+        <ul class="pc-notes">
+          <li>The differentiators are real and rare — first-generation graduate to senior higher ed leader to PhD researcher — but they're not yet named as a single, ownable story or method.</li>
+          <li>Testimonials consistently describe the same thing — patient but accountability-holding, theory translated into practice for real political and interpersonal dynamics — which is the proof a sharper claim could be built on.</li>
+        </ul>
+      </div>
+      <div class="pc sharpening">
+        <div class="pc-n">Pillar 04</div><div class="pc-name">Solve</div><div class="pc-subtext">Package your process so people understand how you create results.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Sharpening</span></div>
+        <div class="pc-claim">"We help our clients move from reacting to whatever training was just requested, to understanding the real, root-cause issue underneath it, with a layered coaching, development, and assessment process — so they walk away with a plan that builds lasting skills instead of a one-time fix."</div>
+        <ul class="pc-notes">
+          <li>The root cause she owns is real and specific — what looks like a skills gap (like a pronoun training request) is often a deeper trust and communication gap on the team.</li>
+          <li>The process itself — individual coaching, tailored PD, and pre/mid/post assessment with a final roadmap — is already repeatable. It just doesn't have a name yet, which makes it hard for a client to ask for by name or refer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- POSITIONING -->
+<section class="section" id="positioning">
+  <div class="wrap">
+    <div class="s-label">Niche, POV &amp; Differentiation</div>
+    <h2 class="s-h2">Your Positioning</h2>
+    <p class="s-note">Get clear on where you stand in the market so your audience knows exactly why you're the right choice.</p>
+    <div class="niche-hero">
+      <div class="niche-lbl">BullsEye Niche Formula™</div>
+      <div class="niche-txt">I am a communication and leadership consultant who works with directors and senior leaders on college and university campuses who struggle with leading their teams through constant change, turnover, and the pressure of carrying their institution's mission forward. Unlike other higher education consultants, I specialize in uncovering the root cause behind communication and collaboration breakdowns and coach my clients so they can finally lead with clarity and a team that trusts them. With my layered coaching, professional development, and assessment process — and my own background as a senior higher education leader and first-generation graduate — I empower my clients to become the leader their team actually needs, not the leader their self-doubt tells them to be.</div>
+    </div>
+    <div class="pos3">
+      <div class="pos-b"><div class="pos-b-lbl">Your Point of View</div><div class="pos-b-ttl">The Uncomfortable Truth</div><div class="pos-b-txt">Most higher ed leadership development treats communication problems like a training gap — book a workshop, check the box, move on. <strong>But the real problem is rarely the topic on the agenda. It's whether the team trusts each other enough to talk when something actually goes wrong.</strong> Leaders who skip that question keep buying the same training, year after year, for a problem it was never built to fix.</div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Differentiation</div><div class="pos-b-ttl">Why Only You</div><div class="pos-b-txt">Brandi has personally led higher education teams through the exact pressures her clients are facing now — organizational change, staff turnover, and funding shifts driven by state and federal policy. She pairs that lived experience with a PhD in higher education leadership focused on the systemic challenges shaping these dynamics. Her own first-generation story gives her a direct line into the self-doubt that quietly holds capable leaders back, and she won't let a client hide behind "this is out of my control" without checking whether that's actually true. <strong>No one else bringing this work onto a college campus has sat in the senior leader's chair, studied the system from the inside, and is willing to hand the mirror back to the leader in the room.</strong></div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Zone of Genius</div><div class="pos-b-ttl">What You Own</div><div class="pos-b-txt">What Brandi hands a client goes beyond the workshop itself: a layered roadmap built from individual coaching for the leader, tailored development for their team, and assessment woven in from before the engagement starts to after it ends — so the leader has a way to keep building long after the work together is done.</div></div>
+    </div>
+    <!-- Point of Consideration -->
+    <div class="consideration-box">
+      <div class="consideration-lbl">Area to Consider</div>
+      <div class="consideration-ttl">Your Website Doesn't Say What You Just Told Me</div>
+      <div class="consideration-txt">Right now, brandiscottphd.com introduces you as a "Communication and Leadership Consultant for Higher Education and NonProfits" who "specialize[s] in designing professional development experiences that meet the needs of each team and organization." That sentence could belong to almost any consultant working with colleges and nonprofits — it doesn't say what makes you different. It doesn't mention the thing you're actually best at: finding the real issue underneath a request, like a pronoun-training ask that turned out to be about trust on the team. It doesn't mention your layered coaching-plus-assessment process, or the lived experience and willingness to challenge a leader that your clients clearly value. The credential is on the site. The leadership behind it isn't yet.</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- MESSAGING -->
+<section class="section" id="messaging">
+  <div class="wrap">
+    <div class="s-label">Your Messaging Copy</div>
+    <h2 class="s-h2">Your Brand Messaging</h2>
+    <p class="s-note">Strong copy suggestions to help you write faster and with more clarity. Use these as a starting point for your website, bio, social profiles, and pitches.</p>
+    <div class="val-card">
+      <div class="val-lbl">Value Articulation</div>
+      <div class="val-txt">Most higher ed leadership consultants come in, run the workshop that was requested, and leave. Brandi starts by asking what's actually underneath the request — and usually finds something different than what was asked for. The functional result is a plan that fits the team in front of her, not a generic curriculum pulled off a shelf. But the deeper outcome runs further than fixing one issue: leaders walk away understanding their own gaps, with a roadmap for closing them long after the engagement ends. That's the difference between a leader who survives this year's changes and one who's ready for whatever comes next.</div>
+    </div>
+    <div class="mh-row"><div class="mh-lv">Big Idea</div><div><div class="mh-txt">The training was never the problem. The trust underneath it was.</div><div class="mh-note">Use on: homepage headline · about page · speaking bio · content hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">One-Liner</div><div><div class="mh-txt">Helping higher ed leaders fix the real problem underneath their team's communication breakdowns.</div><div class="mh-note">Use on: Instagram bio · email signature · LinkedIn headline · intro slides</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Hook</div><div><div class="mh-txt">You did the training. So why is the team still struggling?</div><div class="mh-note">Use on: paid ads · email subject lines · video openers · social hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Problem Statement</div><div><div class="mh-txt">You're carrying your division's piece of the institution's mission, and some days it feels like you're the only one holding it together. Staff are stretched, turnover keeps creeping in, and every policy change from the state or federal level adds more weight to a team that's already tired. You've tried training. You've tried being patient. But the gap isn't closing — and quietly, you're starting to wonder if it's you.</div><div class="mh-note">Use on: sales page · long-form posts · podcast intros · website above the fold</div></div></div>
+    <div class="bma-wrap">
+      <div class="bma-eyebrow">Your Brand Message Asset</div>
+      <div class="bma-title">Use This Everywhere</div>
+      <div class="bma-sub">Your brand in one paragraph. Ready for your website, proposals, pitches, and creative briefs.</div>
+      <div class="bma-text">
+        I work with <em class="bma-em">directors and senior leaders in higher education</em> who are struggling with <em class="bma-em">communication breakdowns, turnover, and the pressure of leading a team through constant change</em>, and who want <em class="bma-em">to lead with clarity and confidence without losing more people along the way</em>.
+        <hr class="bma-divider">
+        I help them get there through <em class="bma-em2">individualized coaching, tailored professional development, and a built-in assessment process that tracks growth from start to finish</em> — without <em class="bma-em2">another one-off training that looks good on paper and doesn't change anything</em>.
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- VOICE -->
+<section class="section" id="voice">
+  <div class="wrap">
+    <div class="s-label">Brand Personality</div>
+    <h2 class="s-h2">Voice &amp; Personality</h2>
+    <p class="s-note">Define the tone, energy, and style that make your brand feel recognizable, relatable, and real.</p>
+    <div class="voice-2">
+      <div class="is-c"><div class="v-head">You Are</div><div class="tags"><span class="tag">Confident</span><span class="tag">Bold</span><span class="tag">Empathetic</span><span class="tag">Thoughtful</span><span class="tag">Direct</span></div></div>
+      <div class="not-c"><div class="v-head">You Are Not</div><div class="tags"><span class="tag">Generic</span><span class="tag">Hesitant</span><span class="tag">All Theory, No Practice</span><span class="tag">Cold</span><span class="tag">One-Size-Fits-All</span></div></div>
+    </div>
+    <div class="vs-box">
+      <div class="vs-lbl">Voice in Action</div>
+      <div class="vs-txt">"Let's be honest with each other — is this actually out of your control, or is it just easier to call it that?"</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PILLARS -->
+<section class="section" id="pillars">
+  <div class="wrap">
+    <div class="s-label">Your Thought Leadership</div>
+    <h2 class="s-h2">Your 5 Content Pillars</h2>
+    <p class="s-note">Five topics you own. Each one specific enough to create content from today.</p>
+    <div class="cp-r"><div class="cp-n">01</div><div><div class="cp-name">Beneath the Surface</div><div class="cp-msg">Every surface request is hiding the real one — and naming it is the first act of leadership.</div></div><div class="cp-ang"><span>The real story behind a training request that turned out to be about something else entirely (told without naming names)</span><span>Presenting problem vs. root cause: a simple breakdown higher ed leaders can use before booking the next workshop</span><span>Three questions to ask your team before you assume you know what they need</span><span>How to tell the difference between a skills gap and a trust gap on your team</span></div></div>
+    <div class="cp-r"><div class="cp-n">02</div><div><div class="cp-name">Leading Through Constant Change</div><div class="cp-msg">Higher ed leaders don't need more resilience training — they need a way to lead when the ground keeps moving.</div></div><div class="cp-ang"><span>How to keep a team aligned to the mission when resources, policy, and priorities keep shifting underneath you</span><span>What your turnover numbers are actually telling you about your team's communication</span><span>Translating institutional pressure into team-level clarity — a simple framework</span><span>The difference between "managing change" and actually leading through it</span></div></div>
+    <div class="cp-r"><div class="cp-n">03</div><div><div class="cp-name">The Mirror Moment</div><div class="cp-msg">Sometimes the leadership gap isn't on the team. It's in the mirror.</div></div><div class="cp-ang"><span>The phrase "this is out of my control" — and what it's usually protecting</span><span>How unclear expectations from leadership quietly create the burnout leaders blame on everything else</span><span>A short self-check for leaders before they point at the team</span><span>Why being direct and being kind aren't opposites</span></div></div>
+    <div class="cp-r"><div class="cp-n">04</div><div><div class="cp-name">From First-Gen to Faculty Lounge</div><div class="cp-msg">Self-doubt doesn't disappear when you get the title — it just gets quieter.</div></div><div class="cp-ang"><span>What it's like leading a team when you're still the only one in your family who's done this job</span><span>The inner monologue of capable women leaders in higher ed — and how to talk back to it</span><span>Why "I don't belong here" shows up more in leadership than anyone admits</span><span>How to lead as the version of yourself you actually want to be, not the one your insecurities describe</span></div></div>
+    <div class="cp-r"><div class="cp-n">05</div><div><div class="cp-name">Inside the Layered Process</div><div class="cp-msg">A one-time workshop ends when I leave the room. A layered process keeps working after I'm gone.</div></div><div class="cp-ang"><span>A walkthrough of what actually happens in an engagement, start to finish</span><span>Why pre/mid/post assessment matters more than the workshop itself</span><span>What clients notice months after the work together ends, and why</span><span>The research question from her PhD that still shapes how she works with every team</span></div></div>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT + ELEVATOR PITCH -->
+<section class="bs" id="statement">
+  <div class="bs-inner">
+    <div class="bs-top">The Payoff — Built From Everything Above</div>
+    <h2 class="bs-h">Your Brand Statement</h2>
+    <div class="bs-txt">Dr. Brandi Scott is a communication and leadership consultant who works with directors and senior leaders on college and university campuses. With a PhD in higher education leadership and 15+ years leading teams through organizational change, turnover, and shifting state and federal policy, she helps leaders see what's really driving their team's struggles — and build the skills to fix it for good. Her approach goes beyond a single workshop: individualized coaching, tailored professional development, and assessment built in before, during, and after the work together. As a first-generation graduate who became a senior higher education leader, Brandi understands the self-doubt that quietly holds capable leaders back, and she won't let a client hide behind "it's out of my control" without first checking whether that's true. <strong>She helps leaders stop managing symptoms and start leading the team — and the mission — they were actually meant to carry.</strong></div>
+    <div class="ep-block">
+      <div class="ep-lbl">Your 30-Second Elevator Pitch</div>
+      <div class="ep-sub">Memorise this. Use it everywhere.</div>
+      <div class="ep-txt">My name is Brandi Scott and I work with directors and senior leaders on college and university campuses who are leading their teams through constant change, turnover, and the pressure of carrying their institution's mission forward. Most of them have already tried a training or two that didn't stick — because the real issue was never the topic on the agenda. I help them find what's actually underneath it through individualized coaching, tailored professional development, and an assessment process that tracks growth from start to finish. With a PhD in higher education leadership and 15+ years as a senior leader myself, I bring both the research and the lived experience — including the willingness to ask a leader to check her own blind spots first. The result: leaders who stop reacting to the next crisis and start leading their team, and their mission, with clarity and confidence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK WINS -->
+<section class="section" id="wins">
+  <div class="wrap">
+    <div class="s-label">What to Do This Month</div>
+    <h2 class="s-h2">Your Quick Wins</h2>
+    <p class="s-note">Your quick wins — simple actions you can take this month to build real momentum for your brand.</p>
+    <div class="wt">
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Rewrite Your Homepage Headline</div><div class="wi-desc">Replace "Communication and Leadership Consultant for Higher Education and NonProfits" with language that names what you actually do: find and fix the root cause beneath your team's communication breakdowns. The PhD and the lived experience are already there — your headline just needs to catch up.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Add the Pronoun-Training Story to Your About Page</div><div class="wi-desc">Without naming anyone, add a short version of the story where a "pronoun training" request turned out to be a team trust issue. It's the clearest example you have of how you diagnose what's really going on — and it's exactly the moment your ideal client will recognize from her own team.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 2</div><div class="wi-ttl">Name Your Process</div><div class="wi-desc">Give your layered approach — individual coaching, tailored professional development, and pre/mid/post assessment with a final roadmap — an actual name. Right now it's described in steps. Once it has a name, it becomes something a client can ask for, and refer to a colleague.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 3</div><div class="wi-ttl">Write the "Mirror Moment" Piece</div><div class="wi-desc">Publish the content piece built around "this is out of my control" — the moment you challenge a leader to check whether her own unclear expectations are driving the team's burnout. This is the hardest-to-copy thing about how you work, and right now it only lives in conversations.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 4</div><div class="wi-ttl">Build a Signature Talk Around the First-Gen Leader Story</div><div class="wi-desc">Your background as a first-generation graduate, and the self-doubt work you do with women leaders, is a distinct asset nobody else in this space can claim. Turn it into a signature talk, keynote, or workshop that institutions can book by name — a personal story made into a repeatable, sellable offer.</div></div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND FUTURE -->
+<section class="section" style="padding:0">
+  <div class="wrap" style="padding-top:80px;padding-bottom:0">
+    <div class="brand-future">
+      <div class="bf-lbl">Your Brand Future</div>
+      <div class="bf-h">You are on your way to becoming the <em>go-to root-cause strategist</em> for higher education leaders navigating constant change — the person institutions call not for another training, but for the work underneath it. As your process gets a name and your story finds its way into your content, the leaders who've been quietly asking themselves "is it me?" will find you, and recognize themselves immediately. From there, it's not just workshops booked — it's <em>teams that stay instead of leaving, and leaders who finally trust their own judgment</em>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- UPSELLS -->
+<section class="section" id="cta" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">Ready to Go Further?</div>
+    <h2 class="s-h2">Work With Mallika</h2>
+    <p class="s-note" style="margin-bottom:32px">Two ways to keep building. Choose what fits where you are right now.</p>
+    <div class="upsell-grid">
+      <div class="upsell-card">
+        <span class="upsell-type">Discussion &amp; Review</span>
+        <div class="upsell-price">$297</div>
+        <div class="upsell-name">VIP Brand Strategy Session</div>
+        <div class="upsell-tag">One hour. Real strategy. Just the two of us.</div>
+        <div class="upsell-desc">We sit down together and go through your Blueprint in depth. We pressure-test your positioning, make sure your messaging is airtight, and answer every question you have before you start executing. You leave with absolute clarity on your next move — and none of the second-guessing.</div>
+        <a href="https://mikifoto.podia.com/vip-brand-strategy-session" class="upsell-btn">Book Your Session &rarr;</a>
+      </div>
+      <div class="upsell-card featured">
+        <span class="upsell-type">Done-With-You &amp; Done-For-You</span>
+        <div class="upsell-price">$4,500</div>
+        <div class="upsell-name">3-Month Private Mentorship</div>
+        <div class="upsell-tag">This is where strategy becomes reality.</div>
+        <div class="upsell-desc">We do not just talk about what your brand could be — we build it together, and in some areas, we build it for you. Your positioning goes live. Your messaging gets written. Your method gets named. Your content engine gets running. Three months of Mallika in your corner, from strategy through execution, start to finish.</div>
+        <a href="https://thebrandceo.com/contact" class="upsell-btn">Apply Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="f-l">
+    <img class="f-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+  <div class="f-r">BullsEye Brand Blueprint™ &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; <span id="footer-date"></span></div>
+</div>
+
+</div><!-- /report-wrap -->
+
+<script>
+function generatePDF(){
+  var btn = document.getElementById("pdf-btn");
+  btn.textContent = "Preparing\u2026";
+  btn.style.pointerEvents = "none";
+
+  var old = document.getElementById("print-frame");
+  if(old) old.parentNode.removeChild(old);
+
+  var PAGE_W = 1040;
+
+  var iframe = document.createElement("iframe");
+  iframe.id = "print-frame";
+  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:"+PAGE_W+"px;height:100px;border:none;";
+  document.body.appendChild(iframe);
+
+  var styleEl = document.querySelector("style");
+  var reportHTML = document.getElementById("report-wrap").innerHTML;
+
+  var printOverrides = "" +
+    "html,body{width:"+PAGE_W+"px!important;margin:0!important;padding:0!important}" +
+    ".dl,.cp-section-strip{display:none!important}" +
+    ".cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}" +
+    ".cp-header{display:none!important}" +
+    "hr.divider{display:none!important}" +
+    ".section{page-break-before:auto!important;break-before:auto!important;padding:48px 0!important}" +
+    "section.bs{page-break-before:auto!important;break-before:auto!important}" +
+    ".footer{page-break-before:avoid!important;break-before:avoid!important;page-break-inside:avoid!important}" +
+    "@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}";
+
+  var doc = '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+    '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">' +
+    '<style>' + styleEl.textContent + printOverrides + '</style></head><body>' +
+    reportHTML +
+    '</body></html>';
+
+  iframe.contentDocument.open();
+  iframe.contentDocument.write(doc);
+  iframe.contentDocument.close();
+
+  function setPageSize(idoc, w, extra){
+    var h = Math.ceil(idoc.documentElement.scrollHeight) + extra;
+    iframe.style.height = h + "px";
+    var old = idoc.getElementById("dyn-page-style");
+    if(old) old.remove();
+    var pageStyle = idoc.createElement("style");
+    pageStyle.id = "dyn-page-style";
+    pageStyle.textContent = "@page{size:" + w + "px " + h + "px; margin:0}";
+    idoc.head.appendChild(pageStyle);
+    return h;
+  }
+
+  function waitForImages(idoc, cb){
+    var imgs = idoc.querySelectorAll("img");
+    var pending = 0;
+    imgs.forEach(function(img){
+      if(!img.complete){
+        pending++;
+        img.addEventListener("load", done);
+        img.addEventListener("error", done);
+      }
+    });
+    function done(){ pending--; if(pending<=0) cb(); }
+    if(pending===0) cb();
+  }
+
+  setTimeout(function(){
+    var idoc = iframe.contentDocument;
+    waitForImages(idoc, function(){
+      setPageSize(idoc, PAGE_W, 0);
+      setTimeout(function(){
+        setPageSize(idoc, PAGE_W, 200);
+        setTimeout(function(){
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          btn.innerHTML = "&#8659; Save as PDF";
+          btn.style.pointerEvents = "";
+        }, 300);
+      }, 400);
+    });
+  }, 600);
+}
+(function(){
+  var d = new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  ["footer-date","cover-date"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.textContent = d;
+  });
+})();
+</script>
+</body>
+</html>
