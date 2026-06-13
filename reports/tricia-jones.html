@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BullsEye Brand Blueprint™ — Tricia Jones</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FDFAF6;--cream-2:#F7F2EC;--cream-3:#F0E9FD;
+  --magenta:#962481;--magenta-h:#b82e9a;--magenta-pale:#F9EDF7;--magenta-mid:#EDD5F0;
+  --gold:#8a8520;--gold-l:#a29f36;--gold-pale:#F8F6E3;
+  --navy:#201454;--navy-2:#2e1f72;
+  --muted:#6a6090;--muted-light:#8a7fa8;--border:#E8E0F4;--white:#fff;
+  --body:#3a3060;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;font-size:19px;line-height:1.75}
+
+/* ── DL BAR ── */
+.dl{position:fixed;top:0;left:0;right:0;z-index:999;height:56px;background:rgba(253,250,246,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.dl-left{display:flex;align-items:center;gap:12px}
+.dl-txt{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.dl-logo-h{height:32px;object-fit:contain}
+.dl-btn{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:var(--magenta);color:#fff;border:none;padding:10px 22px;cursor:pointer;border-radius:100px;transition:background .2s}
+.dl-btn:hover{background:var(--magenta-h)}
+
+/* ── COVER PAGE ── */
+.cover-page{position:relative;overflow:hidden;display:flex;flex-direction:column;height:100vh;max-height:100vh;background:linear-gradient(145deg,#fff 0%,#fdf5fb 40%,#f5edf8 100%);border-bottom:3px solid var(--magenta)}
+.cp-deco-wrap{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:500px;height:500px;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.cp-deco-arc{width:100%;height:100%}
+.cp-circle-logo{position:absolute;width:130px;height:130px;border-radius:50%;object-fit:cover;z-index:2}
+.cp-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 56px;border-bottom:1px solid rgba(150,36,129,0.1);flex-shrink:0}
+.cp-header-date{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(32,20,84,0.5)}
+.cp-upper{flex:1;position:relative;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:3vh 60px;min-height:0}
+.cp-eyebrow{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.cp-eyebrow::before{display:block;content:"";width:28px;height:1px;background:var(--gold-l)}
+.cp-title{font-family:"Oswald",sans-serif;font-size:clamp(44px,7vw,90px);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-2px;color:var(--navy);margin-bottom:4px}
+.cp-title .ct2{display:block;-webkit-text-stroke:1.5px rgba(32,20,84,0.22);color:transparent}
+.cp-title .ct3{display:block;color:var(--magenta)}
+.cp-for-name{display:flex;align-items:center;gap:16px;margin:14px 0 20px}
+.cp-for-line{flex:0 0 36px;height:1px;background:rgba(150,36,129,0.3)}
+.cp-for-text{font-family:"Dancing Script",cursive;font-size:clamp(22px,3vw,36px);color:var(--body);font-weight:600}
+.cp-for-text em{color:var(--magenta);font-style:normal}
+.cp-tagline{font-family:"Lato",sans-serif;font-size:16px;color:rgba(32,20,84,0.6);line-height:1.7;max-width:500px;font-weight:300;font-style:italic}
+.cp-section-strip{position:relative;z-index:10;border-top:1px solid rgba(150,36,129,0.1);display:flex;overflow-x:auto;background:rgba(255,255,255,0.85);flex-shrink:0}
+.cp-ss-item{flex:1;padding:11px 12px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(150,36,129,0.07);font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .2s,background .2s}
+.cp-ss-item:last-child{border-right:none}
+.cp-ss-item:hover{color:var(--magenta);background:var(--magenta-pale)}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 44px}
+.section{padding:72px 0}
+.s-label{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--magenta);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.s-label::before{content:"";width:22px;height:1px;background:var(--magenta)}
+.s-h2{font-family:"Playfair Display",serif;font-size:38px;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:8px}
+.s-note{font-size:17px;color:var(--muted);font-style:italic;margin-bottom:40px}
+.divider{border:none;border-top:1px solid var(--border)}
+
+/* ── SNAPSHOT ── */
+.snap-box{background:var(--magenta-pale);border-radius:16px;padding:44px 48px;position:relative;overflow:hidden;border-left:4px solid var(--magenta)}
+.snap-q{font-family:"Playfair Display",serif;font-size:80px;font-weight:900;color:rgba(150,36,129,.12);line-height:.8;margin-bottom:-12px}
+.snap-body{font-size:19px;line-height:1.85;color:var(--navy);max-width:780px}
+.snap-body strong{color:var(--magenta)}
+
+/* ── PPT ── */
+.ppt-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.ppt-card{border-radius:14px;padding:34px 28px;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end}
+.pb-problem{background:linear-gradient(160deg,#fdf0f8 0%,#f5d0ec 100%)}
+.pb-promise{background:linear-gradient(160deg,#f8f3e6 0%,#ede5bc 100%)}
+.pb-transform{background:linear-gradient(160deg,var(--magenta-pale) 0%,var(--magenta-mid) 100%)}
+.ppt-bg-n{position:absolute;right:-8px;top:-20px;font-family:"Playfair Display",serif;font-size:130px;font-weight:900;opacity:.05;color:var(--navy);line-height:1;pointer-events:none}
+.ppt-icon{font-size:26px;margin-bottom:10px}
+.ppt-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.pb-problem .ppt-lbl{color:#962481}.pb-promise .ppt-lbl{color:var(--gold)}.pb-transform .ppt-lbl{color:var(--magenta)}
+.ppt-title{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.ppt-txt{font-size:15px;line-height:1.75;color:#4a3d6e}
+
+/* ── AUDIENCE ── */
+.aud-grid{display:grid;grid-template-columns:5fr 7fr;gap:44px}
+.aud-who{background:var(--magenta-pale);border-radius:12px;padding:30px;border-left:3px solid var(--magenta)}
+.aud-lbl{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:12px}
+.aud-txt{font-size:17px;line-height:1.85;color:var(--navy)}
+.pain-grid{display:grid;gap:12px}
+.pain-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.pain-qm{font-family:"Playfair Display",serif;font-size:32px;color:rgba(150,36,129,.18);line-height:1;flex-shrink:0;margin-top:-4px}
+.pain-txt{font-size:15px;line-height:1.7;color:var(--navy)}
+
+/* ── BRAND AUDIT ── */
+.audit-legend{display:flex;gap:20px;margin-bottom:32px;padding:20px 24px;background:var(--white);border-radius:10px;border:1px solid var(--border)}
+.legend-item{display:flex;align-items:flex-start;gap:12px}
+.legend-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.legend-badge.strong{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.legend-badge.sharpening{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.legend-txt{font-size:15px;color:var(--body);line-height:1.6}
+.legend-txt strong{color:var(--navy)}
+.p4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px 22px;overflow:hidden;position:relative}
+.pc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:12px 12px 0 0}
+.pc.strong::before{background:#a29f36}.pc.sharpening::before{background:#962481}
+.pc-n{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted-light);margin-bottom:4px}
+.pc-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.pc-subtext{font-size:13px;color:var(--muted);margin-bottom:8px}
+.pc-badge-row{margin-bottom:12px}
+.pc-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block}
+.pc.strong .pc-badge{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.pc.sharpening .pc-badge{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.pc-claim{font-family:"Playfair Display",serif;font-style:italic;font-size:14px;line-height:1.65;color:var(--magenta);background:rgba(150,36,129,0.05);border-left:3px solid rgba(150,36,129,0.25);padding:12px 14px;margin-bottom:14px;border-radius:0 6px 6px 0}
+.pc-notes{list-style:none}
+.pc-notes li{font-size:14px;line-height:1.6;color:var(--body);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(150,36,129,0.06)}
+.pc-notes li:last-child{border-bottom:none}
+.pc-notes li::before{content:"→";position:absolute;left:0;color:var(--magenta);font-size:12px;top:6px}
+
+/* ── POSITIONING ── */
+.niche-hero{background:var(--magenta-pale);border-radius:16px;padding:44px 52px;margin-bottom:24px;position:relative;overflow:hidden;text-align:center;border:1px solid rgba(150,36,129,0.18)}
+.niche-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:16px}
+.niche-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy);max-width:760px;margin:0 auto}
+.pos3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.pos-b{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px}
+.pos-b-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:6px}
+.pos-b-ttl{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pos-b-txt{font-size:15px;line-height:1.8;color:var(--body)}
+.pos-b-txt strong{color:var(--navy);font-weight:700}
+.consideration-box{background:#fffbf0;border:1.5px solid #d4a017;border-radius:12px;padding:28px 32px;border-left:4px solid #d4a017}
+.consideration-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a6000;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.consideration-lbl::before{content:"⚠";font-size:14px}
+.consideration-ttl{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:#5a3e00;margin-bottom:10px}
+.consideration-txt{font-size:15px;line-height:1.8;color:#5a3e00}
+
+/* ── MESSAGING ── */
+.val-card{background:var(--magenta);border-radius:12px;padding:36px 40px;margin-bottom:32px;position:relative;overflow:hidden}
+.val-card::before{content:"C";font-family:"Playfair Display",serif;font-size:180px;position:absolute;right:24px;top:-24px;color:rgba(255,255,255,.07);line-height:1}
+.val-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.val-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:21px;line-height:1.75;color:#fff;position:relative;max-width:740px}
+.mh-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border);align-items:start}
+.mh-row:last-child{border-bottom:none}
+.mh-lv{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding-top:3px;font-weight:600}
+.mh-row:nth-child(1) .mh-lv{color:var(--magenta)}
+.mh-row:nth-child(2) .mh-lv{color:var(--gold)}
+.mh-row:nth-child(3) .mh-lv{color:var(--navy)}
+.mh-row:nth-child(4) .mh-lv{color:var(--muted)}
+.mh-txt{font-size:17px;line-height:1.8;color:var(--navy)}
+.mh-note{font-size:13px;color:var(--muted);font-style:italic;margin-top:4px}
+.bma-wrap{background:var(--navy);border-radius:14px;padding:40px 44px;margin-top:48px}
+.bma-eyebrow{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px}
+.bma-title{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px}
+.bma-sub{font-size:15px;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.bma-text{font-size:18px;line-height:2.0;color:#fff}
+.bma-em{background:var(--magenta);color:#fff;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-em2{background:rgba(162,159,54,0.28);color:#d4d16a;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0}
+
+/* ── VOICE ── */
+.voice-2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:28px}
+.v-head{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.is-c .v-head{color:#1a7a42}.not-c .v-head{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 18px;border-radius:100px}
+.is-c .tag{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.not-c .tag{background:var(--cream-2);color:var(--muted);border:1px solid var(--border)}
+.vs-box{background:var(--cream-3);border-radius:12px;padding:30px 36px;border-left:3px solid var(--magenta)}
+.vs-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.vs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy)}
+
+/* ── PILLARS ── */
+.cp-r{display:grid;grid-template-columns:72px 1fr 2fr;gap:26px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start}
+.cp-r:last-child{border-bottom:none}
+.cp-n{font-family:"Playfair Display",serif;font-size:44px;font-weight:900;color:rgba(150,36,129,.12);line-height:1}
+.cp-name{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.cp-msg{font-style:italic;font-size:14px;color:var(--magenta);margin-bottom:6px;line-height:1.55}
+.cp-ang{font-size:15px;line-height:1.75;color:var(--body)}
+.cp-ang span{display:block;padding:3px 0}
+.cp-ang span::before{content:"· ";color:var(--magenta);font-weight:700}
+
+/* ── BRAND STATEMENT ── */
+.bs{background:var(--magenta-pale);padding:80px 0;border-top:1px solid rgba(150,36,129,0.15);border-bottom:1px solid rgba(150,36,129,0.15)}
+.bs-inner{max-width:780px;margin:0 auto;padding:0 44px}
+.bs-top{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.bs-top::before,.bs-top::after{content:"";width:28px;height:1px;background:rgba(138,133,32,.45)}
+.bs-h{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--navy);margin-bottom:26px;line-height:1.15}
+.bs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:20px;line-height:1.85;color:var(--navy);margin-bottom:48px}
+.bs-txt strong{color:var(--magenta);font-style:normal;font-weight:700}
+/* Elevator Pitch — bigger, equal weight */
+.ep-block{background:var(--white);border:2px solid var(--magenta);border-radius:16px;padding:40px 44px}
+.ep-lbl{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ep-sub{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:20px}
+.ep-txt{font-size:19px;line-height:1.9;color:var(--body)}
+
+/* ── QUICK WINS ── */
+.wt{position:relative;padding-left:40px}
+.wt::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(var(--magenta),var(--border))}
+.wi{position:relative;margin-bottom:32px}
+.wi:last-child{margin-bottom:0}
+.wi-dot{position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--magenta);border:3px solid var(--cream);box-shadow:0 0 0 1px var(--magenta)}
+.wi-when{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:4px;font-weight:600}
+.wi-ttl{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.wi-desc{font-size:16px;line-height:1.75;color:var(--body)}
+
+/* ── BRAND FUTURE ── */
+.brand-future{background:var(--magenta);border-radius:16px;padding:56px 60px;text-align:center;position:relative;overflow:hidden;margin:80px 0}
+.brand-future::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(255,255,255,0.08) 0%,transparent 70%)}
+.bf-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:16px;position:relative}
+.bf-h{font-family:"Playfair Display",serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#fff;line-height:1.35;position:relative;max-width:760px;margin:0 auto}
+.bf-h em{font-style:italic;color:#f0c4e8}
+
+/* ── UPSELLS ── */
+.upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.upsell-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:16px}
+.upsell-card.featured{border-color:var(--magenta);border-width:2px}
+.upsell-type{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;width:fit-content}
+.upsell-card:first-child .upsell-type{background:rgba(150,36,129,0.08);color:var(--magenta)}
+.upsell-card.featured .upsell-type{background:var(--magenta);color:#fff}
+.upsell-price{font-family:"Playfair Display",serif;font-size:30px;font-weight:900;color:var(--navy);line-height:1}
+.upsell-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.upsell-tag{font-size:13px;color:var(--magenta);font-style:italic;margin-bottom:4px}
+.upsell-desc{font-size:15px;line-height:1.75;color:var(--body);flex:1}
+.upsell-btn{display:block;text-align:center;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:100px;transition:background .2s;margin-top:auto}
+.upsell-card:first-child .upsell-btn{background:var(--cream-2);color:var(--navy);border:1px solid var(--border)}
+.upsell-card:first-child .upsell-btn:hover{background:var(--border)}
+.upsell-card.featured .upsell-btn{background:var(--magenta);color:#fff}
+.upsell-card.featured .upsell-btn:hover{background:var(--magenta-h)}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);padding:32px 44px;display:flex;align-items:center;justify-content:space-between}
+.f-l{display:flex;align-items:center;gap:16px}
+.f-logo{height:40px;object-fit:contain}
+.f-brand{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.f-r{font-size:13px;color:rgba(255,255,255,.45);font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- DL BAR -->
+<div class="dl">
+  <img class="dl-logo-h" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  <button class="dl-btn" id="pdf-btn" onclick="generatePDF()">&#8659; Save as PDF</button>
+</div>
+
+<!-- REPORT WRAP -->
+<div id="report-wrap">
+
+<!-- COVER PAGE -->
+<section class="cover-page" id="top">
+  <div class="cp-deco-wrap">
+    <svg class="cp-deco-arc" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(150,36,129,0.07)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="195" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="rgba(150,36,129,0.1)" stroke-width="1.5"/>
+      <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(150,36,129,0.06)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="url(#lg1)" stroke-width="14" stroke-linecap="round" stroke-dasharray="993" stroke-dashoffset="350" transform="rotate(-90 250 250)" opacity="0.45"/>
+      <defs><linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e281ba" stop-opacity="0.7"/><stop offset="100%" stop-color="#962481" stop-opacity="0.7"/></linearGradient></defs>
+    </svg>
+    <img class="cp-circle-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781170598/the-brand-ceo.-sub-logo-circle-purple-brand-logos-rgb-1200px-w-300ppi_xovn8m.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+
+  <div class="cp-header">
+    <span class="cp-header-date" id="cover-date">—</span>
+  </div>
+
+  <div class="cp-upper">
+    <div class="cp-eyebrow">Your Personalized Brand Strategy</div>
+    <div class="cp-title">BullsEye<span class="ct2">Brand</span><span class="ct3">Blueprint™</span></div>
+    <div class="cp-for-name"><div class="cp-for-line"></div><div class="cp-for-text">for <em>Tricia Jones</em></div></div>
+    <p class="cp-tagline">Built from your answers. Personalized to your brand.<br>Ready to use yourself — or hand to any designer, copywriter, or launch team and say, "This is the direction."</p>
+  </div>
+
+  <div class="cp-section-strip">
+    <a href="#snapshot" class="cp-ss-item">Snapshot</a>
+    <a href="#ppt" class="cp-ss-item">Problem & Promise</a>
+    <a href="#audience" class="cp-ss-item">Audience</a>
+    <a href="#brandread" class="cp-ss-item">Brand Audit</a>
+    <a href="#positioning" class="cp-ss-item">Positioning</a>
+    <a href="#messaging" class="cp-ss-item">Messaging</a>
+    <a href="#voice" class="cp-ss-item">Voice</a>
+    <a href="#pillars" class="cp-ss-item">Pillars</a>
+    <a href="#statement" class="cp-ss-item">Brand Statement</a>
+    <a href="#wins" class="cp-ss-item">Quick Wins</a>
+    <a href="#cta" class="cp-ss-item">Next Steps</a>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="section" id="snapshot">
+  <div class="wrap">
+    <div class="s-label">Where You Are Right Now</div>
+    <h2 class="s-h2">Your Brand Snapshot</h2>
+    <div class="snap-box">
+      <div class="snap-q">&ldquo;</div>
+      <p class="snap-body">Tricia, you've built a genuine reputation as the designer overwhelmed business owners call when their brand and website finally need to work as hard as they do — your testimonials are full of clients who say you understood their vision before they could fully explain it. But your own website tells a different story. It opens with a story about a pony named Indy, and sells $99 premade logo kits sitting right next to the custom, strategy-first branding you say is your real difference. This Blueprint gives you the language to put your actual zone of genius — and the kind of client you do your best work for — front and center, everywhere people meet you. <strong>The biggest shift for you: stop letting "fast and pretty" carry your brand story, and let "strategic and specific" lead instead.</strong></p>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PPT -->
+<section class="section" id="ppt">
+  <div class="wrap">
+    <div class="s-label">Their Story Before They Find You</div>
+    <h2 class="s-h2">Problem · Promise · Transformation</h2>
+    <p class="s-note">Show your audience that you understand where they are now — and can help them get where they want to go.</p>
+    <div class="ppt-grid">
+      <div class="ppt-card pb-problem">
+        <div class="ppt-bg-n">01</div>
+        <div class="ppt-icon">🔍</div>
+        <div class="ppt-lbl">The Problem</div>
+        <div class="ppt-title">Running the Business, Losing the Brand</div>
+        <div class="ppt-txt">She's busy running her business — sales, fulfillment, the actual work she started the company to do. Branding keeps sliding to "later," and later has been going on for over a year. She knows her current logo, colors, or website no longer reflect what her business has become. Worse, her website isn't booking anything — no inquiries, no calls, nothing. She's tried DIY tools, maybe a cheap freelancer, maybe a template. None of it felt like her, and none of it worked. She's starting to wonder if the problem is her business, when really, it's just her brand.</div>
+      </div>
+      <div class="ppt-card pb-promise">
+        <div class="ppt-bg-n">02</div>
+        <div class="ppt-icon">✦</div>
+        <div class="ppt-lbl">Your Promise</div>
+        <div class="ppt-title">A Brand That Works As Hard As You Do</div>
+        <div class="ppt-txt">When you work with Tricia, you get design built on strategy first, looks second — choices made because they speak to your ideal client, not because they're trendy. The process starts with a call and a quote, then mood boards to set direction, 2-3 logo concepts to choose from, full brand guidelines, and every asset you need after that — all inside about a month. Every piece is built for consistency, so whether someone sees your business card, your website, or your Instagram, they know it's you. You're not handed a logo file and left on your own. You're handed a system.</div>
+      </div>
+      <div class="ppt-card pb-transform">
+        <div class="ppt-bg-n">03</div>
+        <div class="ppt-icon">◎</div>
+        <div class="ppt-lbl">The Transformation</div>
+        <div class="ppt-title">From Overwhelmed to Represented</div>
+        <div class="ppt-txt">Across every client, the shift looks the same: business owners arrive with a brand that doesn't match their business anymore — or never matched it in the first place — and leave with a complete identity that finally represents who they are. They stop feeling embarrassed by or apologetic about their branding, and start feeling ready to actually market themselves. The materials carry weight that used to sit on their shoulders. Clients consistently describe it as a relief — one less thing they have to think about, explain, or second-guess.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- AUDIENCE -->
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="s-label">Your Right-Fit Client</div>
+    <h2 class="s-h2">Who She Is — And What She Says to Herself at 2am</h2>
+    <p class="s-note">The more specifically you can describe her, the more she feels like you are speaking directly to her.</p>
+    <div class="aud-grid">
+      <div>
+        <div class="aud-who">
+          <div class="aud-lbl">Who She Is</div>
+          <div class="aud-txt">She's a small business owner — not a huge company with an in-house marketing team, just her, wearing every hat, running the show day to day. She doesn't have a design background and doesn't pretend to. What she has is a business she's proud of, and not enough hours in the day to also become a brand strategist. Once she trusts someone, she hands over the keys and lets them drive. She's not interested in micromanaging mood boards — she just wants it handled, and handled well.</div>
+        </div>
+      </div>
+      <div>
+        <div class="aud-lbl" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:14px">What She Says to Herself at 2am</div>
+        <div class="pain-grid">
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">I'm overwhelmed just running the day-to-day of my business — I don't have the time or energy to figure out branding on top of that.</div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">My website isn't converting. It's not booking anything for me. I don't know what's wrong, and I don't have the expertise to fix it.</div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">If it weren't for Tricia, I wouldn't have the brand identity I have today — the one so many of my clients have come to know, recognize, and love.</div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">I was a non-stop hustling business owner who finally realized I had to start delegating — and working with Tricia was the moment that stress level actually dropped.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND AUDIT -->
+<section class="section" id="brandread" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">The BullsEye Formula™</div>
+    <h2 class="s-h2">Your BullsEye Brand Audit</h2>
+    <p class="s-note">Four pillars. Where your brand is already working — and where the real opportunity lives.</p>
+    <div class="audit-legend">
+      <div class="legend-item">
+        <span class="legend-badge strong">Strong</span>
+        <div class="legend-txt"><strong>This is working.</strong> Your brand is clear and confident here. Keep building on it — this is where you have real authority.</div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-badge sharpening">Sharpening</span>
+        <div class="legend-txt"><strong>This has real potential.</strong> You have something here — it just needs to be named, clarified, or made more visible. This is your biggest growth opportunity.</div>
+      </div>
+    </div>
+    <div class="p4">
+      <div class="pc sharpening">
+        <div class="pc-n">Pillar 01</div><div class="pc-name">Specialize</div><div class="pc-subtext">Claim the expertise you want to be known for.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Sharpening</span></div>
+        <div class="pc-claim">"The specific area of expertise I'm well known for is strategic, consistent brand design — logos, websites, brand guidelines — for small business owners who don't have time to figure it out themselves. When people think of getting a brand that actually represents them, I want them to think of me."</div>
+        <ul class="pc-notes">
+          <li>Across your answers, you describe doing logo design, web design, brand guidelines, and photography across "different industries" — strong range, but no single zone of genius someone could point to and say "that's Tricia's thing."</li>
+          <li>Your own belief — that good design is strategic and consistent, not just pretty — is a strong point of view, but it doesn't show up anywhere on your website yet, which currently leads with a personal story and premade kits.</li>
+        </ul>
+      </div>
+      <div class="pc strong">
+        <div class="pc-n">Pillar 02</div><div class="pc-name">Specify</div><div class="pc-subtext">Define who you serve best and what they need most.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"I work primarily with small business owners who are overwhelmed running their day-to-day and don't have the time or expertise to fix their branding — and who are frustrated that their current website isn't converting or booking anything for them. What they want is a brand that finally feels like them, and materials that take the pressure off."</div>
+        <ul class="pc-notes">
+          <li>You named a specific situation, not just a job title — owners whose website "isn't converting" or "booking anything," who don't have the time or design expertise to fix it themselves.</li>
+          <li>You also named the desired outcome in emotional terms — feeling "prepared" and carrying "less of a burden" — which is the internal shift your clients are actually buying, not just the deliverable.</li>
+        </ul>
+      </div>
+      <div class="pc sharpening">
+        <div class="pc-n">Pillar 03</div><div class="pc-name">Stand Out</div><div class="pc-subtext">Turn your difference into a memorable reason to choose you.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Sharpening</span></div>
+        <div class="pc-claim">"Unlike other designers, people choose to work with Indus Design Co. because I bring real strategy to design that's usually just about 'making it pretty' — and because once we start, I move fast and keep every piece of your brand consistent, so your business looks like one cohesive thing, not a pile of mismatched files."</div>
+        <ul class="pc-notes">
+          <li>You have a genuinely strong point of view — design should target your ideal demographic, not just look nice — but it isn't named anywhere as a method, process, or framework people could ask for by name.</li>
+          <li>Your testimonials repeatedly use words like "listened," "understood my vision," "personal," and "quick" — real differentiators, but currently scattered across reviews instead of claimed as your signature.</li>
+        </ul>
+      </div>
+      <div class="pc strong">
+        <div class="pc-n">Pillar 04</div><div class="pc-name">Solve</div><div class="pc-subtext">Package your process so people understand how you create results.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"We help our clients move from feeling overwhelmed and unrepresented by their current brand to having a complete, consistent identity — through a guided process of mood boards, logo concepts, brand guidelines, and full asset delivery — so they can show up to market their business with confidence instead of dread."</div>
+        <ul class="pc-notes">
+          <li>You laid out a clear, repeatable process — call, quote, contract, mood boards, 2-3 logo options, brand guidelines, then assets — typically completed within about a month.</li>
+          <li>Your answers show the same pattern across clients: arriving overwhelmed and underrepresented, leaving with materials that "support their mission" and reduce their burden — a consistent transformation, not a one-off result.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- POSITIONING -->
+<section class="section" id="positioning">
+  <div class="wrap">
+    <div class="s-label">Niche, POV &amp; Differentiation</div>
+    <h2 class="s-h2">Your Positioning</h2>
+    <p class="s-note">Get clear on where you stand in the market so your audience knows exactly why you're the right choice.</p>
+    <div class="niche-hero">
+      <div class="niche-lbl">BullsEye Niche Formula™</div>
+      <div class="niche-txt">I am a graphic and web designer who works with small business owners who are overwhelmed running their day-to-day and are frustrated by a brand and website that aren't working for them. Unlike other freelance designers, I specialize in strategic, demographic-targeted brand design and build out my clients' full identity so they can finally show up online looking like the business they actually are. With my collaborative, mood-board-to-guidelines process and an eye for consistency across every touchpoint, I empower my clients to become the recognizable, trusted name in their corner of their market.</div>
+    </div>
+    <div class="pos3">
+      <div class="pos-b"><div class="pos-b-lbl">Your Point of View</div><div class="pos-b-ttl">The Uncomfortable Truth</div><div class="pos-b-txt">Most small business owners think a brand refresh means a prettier logo. Tricia's take is more uncomfortable: if your design doesn't speak directly to the people you actually want as clients, it doesn't matter how pretty it is. <strong>Good design that isn't strategic is just decoration.</strong></div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Differentiation</div><div class="pos-b-ttl">Why Only You</div><div class="pos-b-txt">Tricia has been designing since she was ten years old, and it shows in how naturally she thinks about how a client will experience a brand, not just how it looks on a screen. She moves fast compared to most designers, has worked across a wide range of industries, and insists on one rule a lot of designers skip: everything has to look like it belongs together, no matter the format. <strong>She doesn't just design things that look like you — she designs things that work like you, everywhere they show up.</strong></div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Zone of Genius</div><div class="pos-b-ttl">What You Own</div><div class="pos-b-txt">The intersection that's hers: turning a business owner's half-formed sense of "what I'm going for" into a complete, cohesive brand system — logo, guidelines, web, and beyond — fast enough that it doesn't become another open-ended project on their plate.</div></div>
+    </div>
+    <div class="consideration-box">
+      <div class="consideration-lbl">Area to Consider</div>
+      <div class="consideration-ttl">Your Website Is Telling a Different Story Than You Are</div>
+      <div class="consideration-txt">On your intake, you were clear: good design isn't about being pretty, it's strategic, and you insist on consistency so clients always recognize a piece as "you." Your website currently tells a different story. The homepage features $99 premade logo kits sitting right next to your custom branding offer, which can read as "pick a template" rather than "get a strategy." And your About page opens with a story about a childhood pony named Indy before it ever mentions the strategic thinking your testimonials rave about. Neither of these is a problem on its own — premade kits and a personal story both have a place. But right now, a first-time visitor's impression of Indus Design Co. is "templated and personal," not "strategic and results-driven." That's the opposite of the difference you told us makes you, you.</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- MESSAGING -->
+<section class="section" id="messaging">
+  <div class="wrap">
+    <div class="s-label">Your Messaging Copy</div>
+    <h2 class="s-h2">Your Brand Messaging</h2>
+    <p class="s-note">Strong copy suggestions to help you write faster and with more clarity. Use these as a starting point for your website, bio, social profiles, and pitches.</p>
+    <div class="val-card">
+      <div class="val-lbl">Value Articulation</div>
+      <div class="val-txt">Most designers hand you a logo and call it done — a pretty file, no strategy, and you're on your own figuring out how to use it everywhere else. Tricia builds the whole system: logo, color palette, typography, brand guidelines, and every asset after that, all designed to speak to the specific people you want as clients, not just to look nice. The result is a brand you can actually use — on your website, your social profiles, your business cards — without it falling apart or looking disconnected. That's not just a brand. That's one less thing standing between you and the next client who's exactly right for you.</div>
+    </div>
+    <div class="mh-row"><div class="mh-lv">Big Idea</div><div><div class="mh-txt">Your brand shouldn't be a file you got once. It should be a system you can use everywhere.</div><div class="mh-note">Use on: homepage headline · about page · speaking bio · content hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">One-Liner</div><div><div class="mh-txt">Strategic, consistent brand design for small business owners — built to attract the right clients.</div><div class="mh-note">Use on: Instagram bio · email signature · LinkedIn headline · intro slides</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Hook</div><div><div class="mh-txt">If your website isn't booking anything, the problem probably isn't you. It's your brand.</div><div class="mh-note">Use on: paid ads · email subject lines · video openers · social hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Problem Statement</div><div><div class="mh-txt">You're running your business, wearing every hat, and your branding still doesn't look — or work — like the business you've actually built. You've tried fixing it yourself, or hired it out cheap, and neither felt right. Quietly, you've started wondering if people see your business the way you see it at all.</div><div class="mh-note">Use on: sales page · long-form posts · podcast intros · website above the fold</div></div></div>
+    <div class="bma-wrap">
+      <div class="bma-eyebrow">Your Brand Message Asset</div>
+      <div class="bma-title">Use This Everywhere</div>
+      <div class="bma-sub">Your brand in one paragraph. Ready for your website, proposals, pitches, and creative briefs.</div>
+      <div class="bma-text">
+        I work with <em class="bma-em">small business owners</em> who are <em class="bma-em">overwhelmed running their day-to-day</em> and stuck with a brand and website that don't reflect who they've become — and who want <em class="bma-em">a brand they're proud to put in front of every client</em>.
+        <hr class="bma-divider">
+        I help them get there through <em class="bma-em2">a guided, strategy-first design process</em> — mood boards, logo concepts, brand guidelines, and a full set of consistent assets — without <em class="bma-em2">the back-and-forth guesswork, mismatched files, or months of feeling stuck</em>.
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- VOICE -->
+<section class="section" id="voice">
+  <div class="wrap">
+    <div class="s-label">Brand Personality</div>
+    <h2 class="s-h2">Voice &amp; Personality</h2>
+    <p class="s-note">Define the tone, energy, and style that make your brand feel recognizable, relatable, and real.</p>
+    <div class="voice-2">
+      <div class="is-c"><div class="v-head">You Are</div><div class="tags"><span class="tag">Confident</span><span class="tag">Trustworthy</span><span class="tag">Passionate</span><span class="tag">Genuine</span><span class="tag">Direct</span></div></div>
+      <div class="not-c"><div class="v-head">You Are Not</div><div class="tags"><span class="tag">Timid</span><span class="tag">Flaky</span><span class="tag">Detached</span><span class="tag">Salesy</span><span class="tag">Vague</span></div></div>
+    </div>
+    <div class="vs-box">
+      <div class="vs-lbl">Voice in Action</div>
+      <div class="vs-txt">"Pretty is part of it, sure — but if your brand doesn't speak directly to the people you actually want walking through your door, it's not done yet."</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PILLARS -->
+<section class="section" id="pillars">
+  <div class="wrap">
+    <div class="s-label">Your Thought Leadership</div>
+    <h2 class="s-h2">Your 5 Content Pillars</h2>
+    <p class="s-note">Five topics you own. Each one specific enough to create content from today.</p>
+    <div class="cp-r"><div class="cp-n">01</div><div><div class="cp-name">Design Is Strategy</div><div class="cp-msg">Pretty is a side effect. Strategy is the point.</div></div><div class="cp-ang"><span>Why a logo that "looks nice" can still fail a business — and what to check instead</span><span>A before/after of a brand that looked fine but wasn't speaking to the right person</span><span>"Design decisions I make and why" — one real choice (color, font, layout) and the reasoning behind it</span><span>Common myths about what actually makes a brand "good"</span></div></div>
+    <div class="cp-r"><div class="cp-n">02</div><div><div class="cp-name">Consistency Is the Brand</div><div class="cp-msg">If every piece of your business doesn't look like it belongs to the same brand, you don't have a brand yet — you have a pile of files.</div></div><div class="cp-ang"><span>A simple consistency audit business owners can run on their own brand today</span><span>Small inconsistencies that quietly undermine trust — mismatched fonts, colors, logo versions</span><span>What brand guidelines actually are, and how clients use them day to day</span><span>"Spot the difference" — consistent vs. inconsistent brand presence side by side</span></div></div>
+    <div class="cp-r"><div class="cp-n">03</div><div><div class="cp-name">Behind the Process</div><div class="cp-msg">You don't need to understand design to get a great brand — you just need a process you can trust.</div></div><div class="cp-ang"><span>Walkthrough: mood board → logo concepts → guidelines → full asset delivery</span><span>What a typical month looks like from "yes" to finished brand</span><span>What makes a project move fast vs. stall — and how clients can help</span><span>Client FAQ: what to expect, what to prepare, what not to worry about</span></div></div>
+    <div class="cp-r"><div class="cp-n">04</div><div><div class="cp-name">From Overwhelmed to Represented</div><div class="cp-msg">Most clients aren't behind because they're bad at business. They're behind because branding was never their job.</div></div><div class="cp-ang"><span>Composite before/after stories of business owners who finally felt represented</span><span>The hidden cost of a website that isn't converting or booking anything</span><span>Signs your current brand is quietly working against you</span><span>Permission posts: "You're allowed to outsource this"</span></div></div>
+    <div class="cp-r"><div class="cp-n">05</div><div><div class="cp-name">Behind Indus Design Co.</div><div class="cp-msg">Twenty years of designing, one rule that hasn't changed: it has to feel like you, not like a template.</div></div><div class="cp-ang"><span>Tricia's design origin story — designing since age 10, and what that obsession looks like now</span><span>A peek at her process and the tools she actually uses</span><span>What she looks for when reviewing her own work before it goes to a client</span><span>Premade vs. custom branding — what each is actually for, and how to choose</span></div></div>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT + ELEVATOR PITCH -->
+<section class="bs" id="statement">
+  <div class="bs-inner">
+    <div class="bs-top">The Payoff — Built From Everything Above</div>
+    <h2 class="bs-h">Your Brand Statement</h2>
+    <div class="bs-txt">Tricia Jones is the designer and founder of Indus Design Co., where she helps small business owners turn an overwhelming, inconsistent brand into a complete identity they're proud to put their name on. She's been designing since she was ten years old, and that instinct shows in how she works — fast, collaborative, and focused on what a brand needs to say to the people it's actually for, not just how it looks on a screen. Her process takes clients from a vague sense of "what I'm going for" to a full system: logo, brand guidelines, website, and the consistency to make every piece look like it belongs to the same business. <strong>For business owners who are too busy running their company to also become a brand strategist, Tricia builds the brand — and hands them back the time, and the confidence, to use it.</strong></div>
+    <div class="ep-block">
+      <div class="ep-lbl">Your 30-Second Elevator Pitch</div>
+      <div class="ep-sub">Memorise this. Use it everywhere.</div>
+      <div class="ep-txt">My name is Tricia and I work with small business owners who are overwhelmed running their day-to-day and stuck with a brand or website that doesn't represent — or convert for — the business they've actually built. My approach is collaborative and strategy-first: we start with mood boards, narrow down to 2-3 logo concepts, then build out full brand guidelines and every asset you need, usually within a month. What sets me apart is that I design for your ideal client, not just for "pretty," and I make sure everything stays consistent — so your business looks like one cohesive thing everywhere it shows up. The result: you get your time and confidence back, and a brand you're proud to put in front of anyone.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK WINS -->
+<section class="section" id="wins">
+  <div class="wrap">
+    <div class="s-label">What to Do This Month</div>
+    <h2 class="s-h2">Your Quick Wins</h2>
+    <p class="s-note">Simple actions you can take this month to build real momentum for your brand.</p>
+    <div class="wt">
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Fix the First Impression on Your Homepage</div><div class="wi-desc">Your homepage currently puts $99 premade logo kits front and center, right where your custom, strategy-first positioning should be. Reorder the homepage so your custom branding offer — and a line about what makes your design strategic, not just pretty — leads, with premade kits positioned as a separate, secondary option.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Pick One Sentence and Put It Everywhere</div><div class="wi-desc">Take the Power Niche Statement from this Blueprint and place a version of it on your homepage, About page, and Instagram bio. Right now your About page tells a story about a pony before it ever says what kind of design work you do or who it's for — lead with the work.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 2</div><div class="wi-ttl">Name Your Process</div><div class="wi-desc">You already have a real, repeatable process: mood boards, logo concepts, brand guidelines, full asset delivery, all in about a month. Give it a name — even something simple like "The Indus Brand Build" — so clients can ask for it by name, and so it sets you apart from a designer who "just does logos."</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 3</div><div class="wi-ttl">Rewrite Your Services Page Around the Real Problem</div><div class="wi-desc">Your Custom Branding page currently focuses on what you deliver — logo, colors, fonts. Add a section near the top that speaks directly to the overwhelmed business owner whose website "isn't converting or booking anything," using language close to your own words. Let her recognize herself before she scrolls to the deliverables.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 4</div><div class="wi-ttl">Turn Your Testimonials Into a Case Study Page</div><div class="wi-desc">You have multiple strong testimonials that all say versions of the same thing: clients arrived overwhelmed or unsure, and left with a brand they "recognize and love." Pull two or three of these together into a short case-study style page showing before/after, the process, and the result. This becomes your strongest proof that your strategic, consistent approach actually works.</div></div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND FUTURE -->
+<section class="section" style="padding:0">
+  <div class="wrap" style="padding-top:80px;padding-bottom:0">
+    <div class="brand-future">
+      <div class="bf-lbl">Your Brand Future</div>
+      <div class="bf-h">You are on your way to becoming the <em>go-to strategic brand designer</em> for small business owners who are tired of a brand that doesn't represent them — the one they refer to friends with, "just talk to Tricia, she'll figure it out." As your positioning catches up to the work you're already doing, your website stops competing with your message and starts proving it. The next overwhelmed business owner who lands on indusdesignco.com won't just see pretty logos — she'll see <em>herself</em>, and exactly who can finally take this off her plate.</div>
+    </div>
+  </div>
+</section>
+
+<!-- UPSELLS -->
+<section class="section" id="cta" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">Ready to Go Further?</div>
+    <h2 class="s-h2">Work With Mallika</h2>
+    <p class="s-note" style="margin-bottom:32px">Two ways to keep building. Choose what fits where you are right now.</p>
+    <div class="upsell-grid">
+      <div class="upsell-card">
+        <span class="upsell-type">Discussion &amp; Review</span>
+        <div class="upsell-price">$297</div>
+        <div class="upsell-name">VIP Brand Strategy Session</div>
+        <div class="upsell-tag">One hour. Real strategy. Just the two of us.</div>
+        <div class="upsell-desc">We sit down together and go through your Blueprint in depth. We pressure-test your positioning, make sure your messaging is airtight, and answer every question you have before you start executing. You leave with absolute clarity on your next move — and none of the second-guessing.</div>
+        <a href="https://mikifoto.podia.com/vip-brand-strategy-session" class="upsell-btn">Book Your Session &rarr;</a>
+      </div>
+      <div class="upsell-card featured">
+        <span class="upsell-type">Done-With-You &amp; Done-For-You</span>
+        <div class="upsell-price">$4,500</div>
+        <div class="upsell-name">3-Month Private Mentorship</div>
+        <div class="upsell-tag">This is where strategy becomes reality.</div>
+        <div class="upsell-desc">We do not just talk about what your brand could be — we build it together, and in some areas, we build it for you. Your positioning goes live. Your messaging gets written. Your method gets named. Your content engine gets running. Three months of Mallika in your corner, from strategy through execution, start to finish.</div>
+        <a href="https://thebrandceo.com/contact" class="upsell-btn">Apply Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="f-l">
+    <img class="f-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+  <div class="f-r">BullsEye Brand Blueprint™ &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; <span id="footer-date"></span></div>
+</div>
+
+</div><!-- /report-wrap -->
+
+<script>
+function generatePDF(){
+  var btn = document.getElementById("pdf-btn");
+  btn.textContent = "Preparing\u2026";
+  btn.style.pointerEvents = "none";
+
+  var old = document.getElementById("print-frame");
+  if(old) old.parentNode.removeChild(old);
+
+  var PAGE_W = 1040;
+
+  var iframe = document.createElement("iframe");
+  iframe.id = "print-frame";
+  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:"+PAGE_W+"px;height:100px;border:none;";
+  document.body.appendChild(iframe);
+
+  var styleEl = document.querySelector("style");
+  var reportHTML = document.getElementById("report-wrap").innerHTML;
+
+  var printOverrides = "" +
+    "html,body{width:"+PAGE_W+"px!important;margin:0!important;padding:0!important}" +
+    ".dl,.cp-section-strip{display:none!important}" +
+    ".cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}" +
+    ".cp-header{display:none!important}" +
+    "hr.divider{display:none!important}" +
+    ".section{page-break-before:auto!important;break-before:auto!important;padding:48px 0!important}" +
+    "section.bs{page-break-before:auto!important;break-before:auto!important}" +
+    ".footer{page-break-before:avoid!important;break-before:avoid!important;page-break-inside:avoid!important}" +
+    "@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}";
+
+  var doc = '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+    '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">' +
+    '<style>' + styleEl.textContent + printOverrides + '</style></head><body>' +
+    reportHTML +
+    '</body></html>';
+
+  iframe.contentDocument.open();
+  iframe.contentDocument.write(doc);
+  iframe.contentDocument.close();
+
+  function setPageSize(idoc, w, extra){
+    var h = Math.ceil(idoc.documentElement.scrollHeight) + extra;
+    iframe.style.height = h + "px";
+    var old = idoc.getElementById("dyn-page-style");
+    if(old) old.remove();
+    var pageStyle = idoc.createElement("style");
+    pageStyle.id = "dyn-page-style";
+    pageStyle.textContent = "@page{size:" + w + "px " + h + "px; margin:0}";
+    idoc.head.appendChild(pageStyle);
+    return h;
+  }
+
+  function waitForImages(idoc, cb){
+    var imgs = idoc.querySelectorAll("img");
+    var pending = 0;
+    imgs.forEach(function(img){
+      if(!img.complete){
+        pending++;
+        img.addEventListener("load", done);
+        img.addEventListener("error", done);
+      }
+    });
+    function done(){ pending--; if(pending<=0) cb(); }
+    if(pending===0) cb();
+  }
+
+  setTimeout(function(){
+    var idoc = iframe.contentDocument;
+    waitForImages(idoc, function(){
+      setPageSize(idoc, PAGE_W, 0);
+      setTimeout(function(){
+        setPageSize(idoc, PAGE_W, 200);
+        setTimeout(function(){
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          btn.innerHTML = "&#8659; Save as PDF";
+          btn.style.pointerEvents = "";
+        }, 300);
+      }, 400);
+    });
+  }, 600);
+}
+(function(){
+  var d = new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  ["footer-date","cover-date"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.textContent = d;
+  });
+})();
+</script>
+</body>
+</html>
