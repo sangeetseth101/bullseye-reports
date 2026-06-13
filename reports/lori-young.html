@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BullsEye Brand Blueprint™ — Lori Young</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FDFAF6;--cream-2:#F7F2EC;--cream-3:#F0E9FD;
+  --magenta:#962481;--magenta-h:#b82e9a;--magenta-pale:#F9EDF7;--magenta-mid:#EDD5F0;
+  --gold:#8a8520;--gold-l:#a29f36;--gold-pale:#F8F6E3;
+  --navy:#201454;--navy-2:#2e1f72;
+  --muted:#6a6090;--muted-light:#8a7fa8;--border:#E8E0F4;--white:#fff;
+  --body:#3a3060;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;font-size:19px;line-height:1.75}
+
+/* ── DL BAR ── */
+.dl{position:fixed;top:0;left:0;right:0;z-index:999;height:56px;background:rgba(253,250,246,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.dl-left{display:flex;align-items:center;gap:12px}
+.dl-txt{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.dl-logo-h{height:32px;object-fit:contain}
+.dl-btn{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:var(--magenta);color:#fff;border:none;padding:10px 22px;cursor:pointer;border-radius:100px;transition:background .2s}
+.dl-btn:hover{background:var(--magenta-h)}
+
+/* ── COVER PAGE ── */
+.cover-page{position:relative;overflow:hidden;display:flex;flex-direction:column;height:100vh;max-height:100vh;background:linear-gradient(145deg,#fff 0%,#fdf5fb 40%,#f5edf8 100%);border-bottom:3px solid var(--magenta)}
+.cp-deco-wrap{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:500px;height:500px;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.cp-deco-arc{width:100%;height:100%}
+.cp-circle-logo{position:absolute;width:130px;height:130px;border-radius:50%;object-fit:cover;z-index:2}
+.cp-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 56px;border-bottom:1px solid rgba(150,36,129,0.1);flex-shrink:0}
+.cp-header-date{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(32,20,84,0.5)}
+.cp-upper{flex:1;position:relative;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:3vh 60px;min-height:0}
+.cp-eyebrow{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.cp-eyebrow::before{display:block;content:"";width:28px;height:1px;background:var(--gold-l)}
+.cp-title{font-family:"Oswald",sans-serif;font-size:clamp(44px,7vw,90px);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-2px;color:var(--navy);margin-bottom:4px}
+.cp-title .ct2{display:block;-webkit-text-stroke:1.5px rgba(32,20,84,0.22);color:transparent}
+.cp-title .ct3{display:block;color:var(--magenta)}
+.cp-for-name{display:flex;align-items:center;gap:16px;margin:14px 0 20px}
+.cp-for-line{flex:0 0 36px;height:1px;background:rgba(150,36,129,0.3)}
+.cp-for-text{font-family:"Dancing Script",cursive;font-size:clamp(22px,3vw,36px);color:var(--body);font-weight:600}
+.cp-for-text em{color:var(--magenta);font-style:normal}
+.cp-tagline{font-family:"Lato",sans-serif;font-size:16px;color:rgba(32,20,84,0.6);line-height:1.7;max-width:500px;font-weight:300;font-style:italic}
+.cp-section-strip{position:relative;z-index:10;border-top:1px solid rgba(150,36,129,0.1);display:flex;overflow-x:auto;background:rgba(255,255,255,0.85);flex-shrink:0}
+.cp-ss-item{flex:1;padding:11px 12px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(150,36,129,0.07);font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .2s,background .2s}
+.cp-ss-item:last-child{border-right:none}
+.cp-ss-item:hover{color:var(--magenta);background:var(--magenta-pale)}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 44px}
+.section{padding:72px 0}
+.s-label{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--magenta);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.s-label::before{content:"";width:22px;height:1px;background:var(--magenta)}
+.s-h2{font-family:"Playfair Display",serif;font-size:38px;font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:8px}
+.s-note{font-size:17px;color:var(--muted);font-style:italic;margin-bottom:40px}
+.divider{border:none;border-top:1px solid var(--border)}
+
+/* ── SNAPSHOT ── */
+.snap-box{background:var(--magenta-pale);border-radius:16px;padding:44px 48px;position:relative;overflow:hidden;border-left:4px solid var(--magenta)}
+.snap-q{font-family:"Playfair Display",serif;font-size:80px;font-weight:900;color:rgba(150,36,129,.12);line-height:.8;margin-bottom:-12px}
+.snap-body{font-size:19px;line-height:1.85;color:var(--navy);max-width:780px}
+.snap-body strong{color:var(--magenta)}
+
+/* ── PPT ── */
+.ppt-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.ppt-card{border-radius:14px;padding:34px 28px;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end}
+.pb-problem{background:linear-gradient(160deg,#fdf0f8 0%,#f5d0ec 100%)}
+.pb-promise{background:linear-gradient(160deg,#f8f3e6 0%,#ede5bc 100%)}
+.pb-transform{background:linear-gradient(160deg,var(--magenta-pale) 0%,var(--magenta-mid) 100%)}
+.ppt-bg-n{position:absolute;right:-8px;top:-20px;font-family:"Playfair Display",serif;font-size:130px;font-weight:900;opacity:.05;color:var(--navy);line-height:1;pointer-events:none}
+.ppt-icon{font-size:26px;margin-bottom:10px}
+.ppt-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.pb-problem .ppt-lbl{color:#962481}.pb-promise .ppt-lbl{color:var(--gold)}.pb-transform .ppt-lbl{color:var(--magenta)}
+.ppt-title{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.ppt-txt{font-size:15px;line-height:1.75;color:#4a3d6e}
+
+/* ── AUDIENCE ── */
+.aud-grid{display:grid;grid-template-columns:5fr 7fr;gap:44px}
+.aud-who{background:var(--magenta-pale);border-radius:12px;padding:30px;border-left:3px solid var(--magenta)}
+.aud-lbl{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:12px}
+.aud-txt{font-size:17px;line-height:1.85;color:var(--navy)}
+.pain-grid{display:grid;gap:12px}
+.pain-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.pain-qm{font-family:"Playfair Display",serif;font-size:32px;color:rgba(150,36,129,.18);line-height:1;flex-shrink:0;margin-top:-4px}
+.pain-txt{font-size:15px;line-height:1.7;color:var(--navy)}
+
+/* ── BRAND AUDIT ── */
+.audit-legend{display:flex;gap:20px;margin-bottom:32px;padding:20px 24px;background:var(--white);border-radius:10px;border:1px solid var(--border)}
+.legend-item{display:flex;align-items:flex-start;gap:12px}
+.legend-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.legend-badge.strong{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.legend-badge.sharpening{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.legend-txt{font-size:15px;color:var(--body);line-height:1.6}
+.legend-txt strong{color:var(--navy)}
+.p4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:26px 22px;overflow:hidden;position:relative}
+.pc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:12px 12px 0 0}
+.pc.strong::before{background:#a29f36}.pc.sharpening::before{background:#962481}
+.pc-n{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted-light);margin-bottom:4px}
+.pc-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.pc-subtext{font-size:13px;color:var(--muted);margin-bottom:8px}
+.pc-badge-row{margin-bottom:12px}
+.pc-badge{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 13px;border-radius:100px;display:inline-block}
+.pc.strong .pc-badge{background:rgba(162,159,54,.1);color:#a29f36;border:1px solid rgba(162,159,54,.25)}
+.pc.sharpening .pc-badge{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.pc-claim{font-family:"Playfair Display",serif;font-style:italic;font-size:14px;line-height:1.65;color:var(--magenta);background:rgba(150,36,129,0.05);border-left:3px solid rgba(150,36,129,0.25);padding:12px 14px;margin-bottom:14px;border-radius:0 6px 6px 0}
+.pc-notes{list-style:none}
+.pc-notes li{font-size:14px;line-height:1.6;color:var(--body);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(150,36,129,0.06)}
+.pc-notes li:last-child{border-bottom:none}
+.pc-notes li::before{content:"→";position:absolute;left:0;color:var(--magenta);font-size:12px;top:6px}
+
+/* ── POSITIONING ── */
+.niche-hero{background:var(--magenta-pale);border-radius:16px;padding:44px 52px;margin-bottom:24px;position:relative;overflow:hidden;text-align:center;border:1px solid rgba(150,36,129,0.18)}
+.niche-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:16px}
+.niche-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy);max-width:760px;margin:0 auto}
+.pos3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.pos-b{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px}
+.pos-b-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:6px}
+.pos-b-ttl{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pos-b-txt{font-size:15px;line-height:1.8;color:var(--body)}
+.pos-b-txt strong{color:var(--navy);font-weight:700}
+.consideration-box{background:#fffbf0;border:1.5px solid #d4a017;border-radius:12px;padding:28px 32px;border-left:4px solid #d4a017}
+.consideration-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a6000;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.consideration-lbl::before{content:"⚠";font-size:14px}
+.consideration-ttl{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:#5a3e00;margin-bottom:10px}
+.consideration-txt{font-size:15px;line-height:1.8;color:#5a3e00}
+
+/* ── MESSAGING ── */
+.val-card{background:var(--magenta);border-radius:12px;padding:36px 40px;margin-bottom:32px;position:relative;overflow:hidden}
+.val-card::before{content:"C";font-family:"Playfair Display",serif;font-size:180px;position:absolute;right:24px;top:-24px;color:rgba(255,255,255,.07);line-height:1}
+.val-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.val-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:21px;line-height:1.75;color:#fff;position:relative;max-width:740px}
+.mh-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border);align-items:start}
+.mh-row:last-child{border-bottom:none}
+.mh-lv{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding-top:3px;font-weight:600}
+.mh-row:nth-child(1) .mh-lv{color:var(--magenta)}
+.mh-row:nth-child(2) .mh-lv{color:var(--gold)}
+.mh-row:nth-child(3) .mh-lv{color:var(--navy)}
+.mh-row:nth-child(4) .mh-lv{color:var(--muted)}
+.mh-txt{font-size:17px;line-height:1.8;color:var(--navy)}
+.mh-note{font-size:13px;color:var(--muted);font-style:italic;margin-top:4px}
+.bma-wrap{background:var(--navy);border-radius:14px;padding:40px 44px;margin-top:48px}
+.bma-eyebrow{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px}
+.bma-title{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px}
+.bma-sub{font-size:15px;font-style:italic;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.6}
+.bma-text{font-size:18px;line-height:2.0;color:#fff}
+.bma-em{background:var(--magenta);color:#fff;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-em2{background:rgba(162,159,54,0.28);color:#d4d16a;padding:2px 10px;border-radius:4px;font-style:normal}
+.bma-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0}
+
+/* ── VOICE ── */
+.voice-2{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:28px}
+.v-head{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.is-c .v-head{color:#1a7a42}.not-c .v-head{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 18px;border-radius:100px}
+.is-c .tag{background:rgba(150,36,129,.1);color:#962481;border:1px solid rgba(150,36,129,.25)}
+.not-c .tag{background:var(--cream-2);color:var(--muted);border:1px solid var(--border)}
+.vs-box{background:var(--cream-3);border-radius:12px;padding:30px 36px;border-left:3px solid var(--magenta)}
+.vs-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
+.vs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:19px;line-height:1.8;color:var(--navy)}
+
+/* ── PILLARS ── */
+.cp-r{display:grid;grid-template-columns:72px 1fr 2fr;gap:26px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start}
+.cp-r:last-child{border-bottom:none}
+.cp-n{font-family:"Playfair Display",serif;font-size:44px;font-weight:900;color:rgba(150,36,129,.12);line-height:1}
+.cp-name{font-family:"Playfair Display",serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.cp-msg{font-style:italic;font-size:14px;color:var(--magenta);margin-bottom:6px;line-height:1.55}
+.cp-ang{font-size:15px;line-height:1.75;color:var(--body)}
+.cp-ang span{display:block;padding:3px 0}
+.cp-ang span::before{content:"· ";color:var(--magenta);font-weight:700}
+
+/* ── BRAND STATEMENT ── */
+.bs{background:var(--magenta-pale);padding:80px 0;border-top:1px solid rgba(150,36,129,0.15);border-bottom:1px solid rgba(150,36,129,0.15)}
+.bs-inner{max-width:780px;margin:0 auto;padding:0 44px}
+.bs-top{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.bs-top::before,.bs-top::after{content:"";width:28px;height:1px;background:rgba(138,133,32,.45)}
+.bs-h{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--navy);margin-bottom:26px;line-height:1.15}
+.bs-txt{font-family:"Playfair Display",serif;font-style:italic;font-size:20px;line-height:1.85;color:var(--navy);margin-bottom:48px}
+.bs-txt strong{color:var(--magenta);font-style:normal;font-weight:700}
+/* Elevator Pitch — bigger, equal weight */
+.ep-block{background:var(--white);border:2px solid var(--magenta);border-radius:16px;padding:40px 44px}
+.ep-lbl{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ep-sub{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:20px}
+.ep-txt{font-size:19px;line-height:1.9;color:var(--body)}
+
+/* ── QUICK WINS ── */
+.wt{position:relative;padding-left:40px}
+.wt::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(var(--magenta),var(--border))}
+.wi{position:relative;margin-bottom:32px}
+.wi:last-child{margin-bottom:0}
+.wi-dot{position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--magenta);border:3px solid var(--cream);box-shadow:0 0 0 1px var(--magenta)}
+.wi-when{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:4px;font-weight:600}
+.wi-ttl{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.wi-desc{font-size:16px;line-height:1.75;color:var(--body)}
+
+/* ── BRAND FUTURE ── */
+.brand-future{background:var(--magenta);border-radius:16px;padding:56px 60px;text-align:center;position:relative;overflow:hidden;margin:80px 0}
+.brand-future::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(255,255,255,0.08) 0%,transparent 70%)}
+.bf-lbl{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:16px;position:relative}
+.bf-h{font-family:"Playfair Display",serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#fff;line-height:1.35;position:relative;max-width:760px;margin:0 auto}
+.bf-h em{font-style:italic;color:#f0c4e8}
+
+/* ── UPSELLS ── */
+.upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.upsell-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;gap:16px}
+.upsell-card.featured{border-color:var(--magenta);border-width:2px}
+.upsell-type{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;width:fit-content}
+.upsell-card:first-child .upsell-type{background:rgba(150,36,129,0.08);color:var(--magenta)}
+.upsell-card.featured .upsell-type{background:var(--magenta);color:#fff}
+.upsell-price{font-family:"Playfair Display",serif;font-size:30px;font-weight:900;color:var(--navy);line-height:1}
+.upsell-name{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.upsell-tag{font-size:13px;color:var(--magenta);font-style:italic;margin-bottom:4px}
+.upsell-desc{font-size:15px;line-height:1.75;color:var(--body);flex:1}
+.upsell-btn{display:block;text-align:center;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:100px;transition:background .2s;margin-top:auto}
+.upsell-card:first-child .upsell-btn{background:var(--cream-2);color:var(--navy);border:1px solid var(--border)}
+.upsell-card:first-child .upsell-btn:hover{background:var(--border)}
+.upsell-card.featured .upsell-btn{background:var(--magenta);color:#fff}
+.upsell-card.featured .upsell-btn:hover{background:var(--magenta-h)}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);padding:32px 44px;display:flex;align-items:center;justify-content:space-between}
+.f-l{display:flex;align-items:center;gap:16px}
+.f-logo{height:40px;object-fit:contain}
+.f-brand{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.f-r{font-size:13px;color:rgba(255,255,255,.45);font-style:italic}
+</style>
+</head>
+<body>
+
+<!-- DL BAR -->
+<div class="dl">
+  <img class="dl-logo-h" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  <button class="dl-btn" id="pdf-btn" onclick="generatePDF()">&#8659; Save as PDF</button>
+</div>
+
+<!-- REPORT WRAP -->
+<div id="report-wrap">
+
+<!-- COVER PAGE -->
+<section class="cover-page" id="top">
+  <div class="cp-deco-wrap">
+    <svg class="cp-deco-arc" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(150,36,129,0.07)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="195" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="rgba(150,36,129,0.1)" stroke-width="1.5"/>
+      <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(150,36,129,0.08)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="80" fill="none" stroke="rgba(150,36,129,0.06)" stroke-width="1"/>
+      <circle cx="250" cy="250" r="158" fill="none" stroke="url(#lg1)" stroke-width="14" stroke-linecap="round" stroke-dasharray="993" stroke-dashoffset="350" transform="rotate(-90 250 250)" opacity="0.45"/>
+      <defs><linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e281ba" stop-opacity="0.7"/><stop offset="100%" stop-color="#962481" stop-opacity="0.7"/></linearGradient></defs>
+    </svg>
+    <img class="cp-circle-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781170598/the-brand-ceo.-sub-logo-circle-purple-brand-logos-rgb-1200px-w-300ppi_xovn8m.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+
+  <div class="cp-header">
+    <span class="cp-header-date" id="cover-date">—</span>
+  </div>
+
+  <div class="cp-upper">
+    <div class="cp-eyebrow">Your Personalized Brand Strategy</div>
+    <div class="cp-title">BullsEye<span class="ct2">Brand</span><span class="ct3">Blueprint™</span></div>
+    <div class="cp-for-name"><div class="cp-for-line"></div><div class="cp-for-text">for <em>Lori Young</em></div></div>
+    <p class="cp-tagline">Built from your answers. Personalized to your brand.<br>Ready to use yourself — or hand to any designer, copywriter, or launch team and say, "This is the direction."</p>
+  </div>
+
+  <div class="cp-section-strip">
+    <a href="#snapshot" class="cp-ss-item">Snapshot</a>
+    <a href="#ppt" class="cp-ss-item">Problem & Promise</a>
+    <a href="#audience" class="cp-ss-item">Audience</a>
+    <a href="#brandread" class="cp-ss-item">Brand Audit</a>
+    <a href="#positioning" class="cp-ss-item">Positioning</a>
+    <a href="#messaging" class="cp-ss-item">Messaging</a>
+    <a href="#voice" class="cp-ss-item">Voice</a>
+    <a href="#pillars" class="cp-ss-item">Pillars</a>
+    <a href="#statement" class="cp-ss-item">Brand Statement</a>
+    <a href="#wins" class="cp-ss-item">Quick Wins</a>
+    <a href="#cta" class="cp-ss-item">Next Steps</a>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="section" id="snapshot">
+  <div class="wrap">
+    <div class="s-label">Where You Are Right Now</div>
+    <h2 class="s-h2">Your Brand Snapshot</h2>
+    <div class="snap-box">
+      <div class="snap-q">&ldquo;</div>
+      <p class="snap-body">Lori, you already have something most strategists spend years building: a named method — the OfferMojo&trade; Ecosystem — that covers the entire offer lifecycle, and an audience description detailed enough that a stranger could read it and say "that's me." Here's the gap: your Q2 answer actually describes two different people — the founder launching their first offer, and the established expert who's pivoting — and right now both are introduced in the same breath, which softens the punch of speaking to either one. This Blueprint sharpens that into a single front-door audience, hands you a Power Niche Statement that does the introducing for you, and turns your six-pillar method into content you can post from this week. <strong>The single biggest shift: stop introducing two people in your positioning, and let one of them open every door.</strong></p>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PPT -->
+<section class="section" id="ppt">
+  <div class="wrap">
+    <div class="s-label">Their Story Before They Find You</div>
+    <h2 class="s-h2">Problem · Promise · Transformation</h2>
+    <p class="s-note">Show your audience that you understand where they are now — and can help them get where they want to go.</p>
+    <div class="ppt-grid">
+      <div class="ppt-card pb-problem">
+        <div class="ppt-bg-n">01</div>
+        <div class="ppt-icon">🔍</div>
+        <div class="ppt-lbl">The Problem</div>
+        <div class="ppt-title">Finally Taking It Seriously — and Still Stuck</div>
+        <div class="ppt-txt">She's been spinning on her own for a while, and this business has finally become important enough to invest in. She's tried building it herself, joined other programs, maybe even hired a business coach — and tried AI, more than once. She might have already launched, and it's just not selling, and she doesn't know why. A lack of clarity is standing in the way, but she can't get out of her own head long enough to see it. Underneath it all: impostor syndrome, and a quiet fear that maybe she doesn't have what it takes the way "they" do.</div>
+      </div>
+      <div class="ppt-card pb-promise">
+        <div class="ppt-bg-n">02</div>
+        <div class="ppt-icon">✦</div>
+        <div class="ppt-lbl">Your Promise</div>
+        <div class="ppt-title">A Built Ecosystem, Not Another Worksheet</div>
+        <div class="ppt-txt">Whatever the entry point — an Offer X-Ray to find the leaks, a Sprint to fix one stuck piece, the full OfferMojo&trade; Studio, or the AI-powered Squad — the promise is the same: by the end, the guesswork is gone. Positioning, structure, messaging, visibility and sales are mapped as one ecosystem, not six separate to-dos. Every asset is done-for-you or done-with-you, ready to go to market — not another framework to figure out alone.</div>
+      </div>
+      <div class="ppt-card pb-transform">
+        <div class="ppt-bg-n">03</div>
+        <div class="ppt-icon">◎</div>
+        <div class="ppt-lbl">The Transformation</div>
+        <div class="ppt-title">From Scattered to Sought-After</div>
+        <div class="ppt-txt">Across every client, the same shift happens. What was scattered — offers covering too much ground, messaging that could apply to anyone, pricing that felt apologetic — becomes one sharp, named position. Clients stop performing confidence they don't feel, because the offer itself does the convincing. They stop building custom proposals from scratch and start working from language that's already theirs. And the pricing fight that used to feel impossible becomes a number they say without flinching.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- AUDIENCE -->
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="s-label">Your Right-Fit Client</div>
+    <h2 class="s-h2">Who She Is — And What She Says to Herself at 2am</h2>
+    <p class="s-note">The more specifically you can describe her, the more she feels like you are speaking directly to her.</p>
+    <div class="aud-grid">
+      <div>
+        <div class="aud-who">
+          <div class="aud-lbl">Who She Is</div>
+          <div class="aud-txt">She's an emerging authority launching a new business, or an established authority pivoting into a new or upleveled direction. She likely came from a career and has built — or is building — her own thing. She's a few years in and is finally taking it seriously: designing new offers, or a whole offer ecosystem, and trying to translate her real experience into something clearly structured, positioned and messaged. <br><br>Underneath that, she's been feeling stuck and spinning on her own. She's tried building it herself, joined other programs, maybe hired a business coach, and definitely tried AI — and none of it has moved the needle the way she hoped. She may have already launched, and it's not selling, and she genuinely doesn't know why. The thing she hasn't said out loud: she's started questioning her own experience. She has impostor syndrome. She looks at others in her space who seem to "have what it takes" and quietly wonders if she's one of the ones who doesn't — and if this doesn't work, what that says about her.</div>
+        </div>
+      </div>
+      <div>
+        <div class="aud-lbl" style="font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--magenta);margin-bottom:14px">What She Says to Herself at 2am</div>
+        <div class="pain-grid">
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">"I've tried building this myself, I've even hired help — and I'm still not making real progress on my offers."<br><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:6px">Use for: Sales Page Opening</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">"I launched it. I'm proud of it. And it's just... not selling. I don't even know why."<br><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:6px">Use for: Email Subject Lines</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">"I look at people in my space who seem to have it all figured out, and I wonder if I just don't have what it takes."<br><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:6px">Use for: Homepage Hero Section</span></div></div>
+          <div class="pain-card"><div class="pain-qm">&ldquo;</div><div class="pain-txt">"If this doesn't work, what does that actually say about me?"<br><span style="font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:6px">Use for: Discovery Call Script</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND AUDIT -->
+<section class="section" id="brandread" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">The BullsEye Formula™</div>
+    <h2 class="s-h2">Your BullsEye Brand Audit</h2>
+    <p class="s-note">Four pillars. Where your brand is already working — and where the real opportunity lives.</p>
+    <div class="audit-legend">
+      <div class="legend-item">
+        <span class="legend-badge strong">Strong</span>
+        <div class="legend-txt"><strong>This is working.</strong> Your brand is clear and confident here. Keep building on it — this is where you have real authority.</div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-badge sharpening">Sharpening</span>
+        <div class="legend-txt"><strong>This has real potential.</strong> You have something here — it just needs to be named, clarified, or made more visible. This is your biggest growth opportunity.</div>
+      </div>
+    </div>
+    <div class="p4">
+      <div class="pc strong">
+        <div class="pc-n">Pillar 01</div><div class="pc-name">Specialize</div><div class="pc-subtext">Claim the expertise you want to be known for.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"The specific area of expertise I'm well known for is designing positioning and offer ecosystems for coaches and expert entrepreneurs. When people think of getting their offers clear, structured and sellable, they think of me."</div>
+        <ul class="pc-notes">
+          <li>20+ years across marketing, operations and offer strategy, distilled into one named system — the OfferMojo&trade; Ecosystem — covering strategy, structure, ecosystem, messaging, visibility and sales.</li>
+          <li>Four programs (OfferMojo&trade; Studio, Sprints, Squad, Offer X-Ray) all built around the same single zone of genius: offers, end to end.</li>
+        </ul>
+      </div>
+      <div class="pc strong">
+        <div class="pc-n">Pillar 02</div><div class="pc-name">Specify</div><div class="pc-subtext">Define who you serve best and what they need most.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"I work primarily with coaches and expert entrepreneurs who are launching or repositioning their offers, who struggle with impostor syndrome and offers that quietly aren't selling, and desire the confidence and clarity to build something sustainable and worth their time."</div>
+        <ul class="pc-notes">
+          <li>Names two real entry points — the emerging founder and the established expert pivoting — and what's true for both: a career behind them, finally taking the business seriously.</li>
+          <li>Knows exactly what's already been tried and rejected (DIY, generic AI, other coaches), which sharpens who's ready for her right now.</li>
+        </ul>
+      </div>
+      <div class="pc sharpening">
+        <div class="pc-n">Pillar 03</div><div class="pc-name">Stand Out</div><div class="pc-subtext">Turn your difference into a memorable reason to choose you.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Sharpening</span></div>
+        <div class="pc-claim">"Unlike other business and offer coaches, people choose to work with On a Mission Brands because we are unmatched in working across the entire offer lifecycle — not just one slice of it."</div>
+        <ul class="pc-notes">
+          <li>Real, ownable IP exists — the OfferMojo&trade; Ecosystem and the OfferMojo&trade; Squad (a named AI team: Grace, Kate, Theo, Elliot, Avery, Kai) — and testimonials consistently echo the same experience: "asked the hard questions," "didn't try to fit me in a box," "strategic and grounding."</li>
+          <li>The differentiator currently lives in three different forms — the "full lifecycle" framing, the "generalists are dying" POV, and the "ecosystem, not one offer" belief — and hasn't yet been consolidated into one signature line repeated everywhere.</li>
+        </ul>
+      </div>
+      <div class="pc strong">
+        <div class="pc-n">Pillar 04</div><div class="pc-name">Solve</div><div class="pc-subtext">Package your process so people understand how you create results.</div>
+        <div class="pc-badge-row"><span class="pc-badge">Strong</span></div>
+        <div class="pc-claim">"We help our clients move from scattered, generalist and underpriced to one sharp, named offer ecosystem with the OfferMojo&trade; Method, so they price with confidence and stop starting from zero."</div>
+        <ul class="pc-notes">
+          <li>Owns a real root cause: clients aren't failing because the work is bad — they're failing because their positioning and offer structure don't show what the work is worth.</li>
+          <li>The transformation pattern repeats across every client story — narrow the focus, name the ecosystem, and pricing and sales follow without being forced.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- POSITIONING -->
+<section class="section" id="positioning">
+  <div class="wrap">
+    <div class="s-label">Niche, POV &amp; Differentiation</div>
+    <h2 class="s-h2">Your Positioning</h2>
+    <p class="s-note">Get clear on where you stand in the market so your audience knows exactly why you're the right choice.</p>
+    <div class="niche-hero">
+      <div class="niche-lbl">BullsEye Niche Formula™</div>
+      <div class="niche-txt">I am an offer strategist who works with coaches and expert entrepreneurs who are launching or repositioning their offers, who struggle with offers that don't sell despite real expertise — and the quiet fear that maybe it's them, not the brand. Unlike business coaches who focus on mindset or marketing alone, I specialize in offer strategy across the full lifecycle — positioning, structure, ecosystem, messaging, visibility and sales — and guide my clients so they can finally build offers that are impossible to ignore, easy to refer, and wildly buyable. With my OfferMojo&trade; Ecosystem and OfferMojo&trade; Squad, built from my own reinvention from generalist to specialist, I empower my clients to become the recognized authority in their field, with a business that finally matches the depth of their work.</div>
+    </div>
+    <div class="pos3">
+      <div class="pos-b"><div class="pos-b-lbl">Your Point of View</div><div class="pos-b-ttl">The Uncomfortable Truth</div><div class="pos-b-txt">Generalists are dying — not because their expertise isn't real, but because AI can now do "a little bit of everything" for free, which means "I can help with whatever you need" has stopped being a sellable position. <strong>If your offers speak to a vague, big problem instead of one sharp, specific one, you'll keep losing — to AI, or to the specialist down the street — no matter how good your work actually is.</strong></div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Differentiation</div><div class="pos-b-ttl">Why Only You</div><div class="pos-b-txt">Most people in this space pick one lane — messaging, or mindset, or funnels — and stay there. You work across the entire offer lifecycle, because you've lived the cost of not doing that: eight years as a generalist offering coaching, marketing, launches, branding, websites and funnels, until the market got crowded and you sounded like everyone else. You rebuilt around the OfferMojo&trade; Method, then built an AI-powered Squad that walks clients through the same sequence you use 1:1, so the depth doesn't disappear when the budget is smaller. <strong>You're not teaching a framework you read about — you're teaching the reinvention you had to survive.</strong></div></div>
+      <div class="pos-b"><div class="pos-b-lbl">Your Zone of Genius</div><div class="pos-b-ttl">What You Own</div><div class="pos-b-txt">Your zone of genius is the intersection of structure and creativity — you can hear someone's scattered story about everything they do, and hand back one sharp sentence that names what they're actually known for. Beyond the positioning doc or messaging guide, what you really hand clients is the language they'll use in every sales call, post and pitch from that point forward — so they stop starting from zero.</div></div>
+    </div>
+    <div class="consideration-box">
+      <div class="consideration-lbl">Area to Consider</div>
+      <div class="consideration-ttl">Your Website Speaks to the Result. Your Intake Speaks to the Fear.</div>
+      <div class="consideration-txt">Your homepage leads with the destination — "Stop Blending In. Claim Your Expertise" — and that's strong, confident copy. But the richest material in your answers wasn't about confidence. It was about impostor syndrome, the fear that "maybe it's me, not the brand," and the quiet comparison to others in the space who "seem to have it all figured out." Right now, a visitor needs to already feel ready for "authority" before your messaging speaks to her. The opportunity is to meet her one step earlier — in the moment she's still wondering if the problem is her — so she recognizes herself before she even gets to the part about becoming unignorable.</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- MESSAGING -->
+<section class="section" id="messaging">
+  <div class="wrap">
+    <div class="s-label">Your Messaging Copy</div>
+    <h2 class="s-h2">Your Brand Messaging</h2>
+    <p class="s-note">Strong copy suggestions to help you write faster and with more clarity. Use these as a starting point for your website, bio, social profiles, and pitches.</p>
+    <div class="val-card">
+      <div class="val-lbl">Value Articulation</div>
+      <div class="val-txt">Most coaches working on "offers" will rewrite your sales page, tighten a headline, or run you through a positioning worksheet — one layer, in isolation. You work across all six: strategy, structure, ecosystem, messaging, visibility and sales, so a fix in one place doesn't quietly break another. The functional result is an offer ecosystem where every piece — your free resource, your entry offer, your core offer, your retainer — has a job and leads somewhere. But the deeper outcome isn't the ecosystem itself. It's that clients stop performing confidence on sales calls, because the offer is doing that work for them. When positioning is this specific, pricing stops being a negotiation and starts being a foregone conclusion.</div>
+    </div>
+    <div class="mh-row"><div class="mh-lv">Big Idea</div><div><div class="mh-txt">Your offers don't need more hustle. They need an ecosystem.</div><div class="mh-note">Use on: homepage headline · about page · speaking bio · content hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">One-Liner</div><div><div class="mh-txt">I help coaches and experts build offer ecosystems so specific, they sell themselves.</div><div class="mh-note">Use on: Instagram bio · email signature · LinkedIn headline · intro slides</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Hook</div><div><div class="mh-txt">You launched it. You're proud of it. So why isn't it selling?</div><div class="mh-note">Use on: paid ads · email subject lines · video openers · social hooks</div></div></div>
+    <div class="mh-row"><div class="mh-lv">Problem Statement</div><div><div class="mh-txt">You've done the work — built the offer, written the copy, even hired help. But it's not landing, and somewhere underneath the to-do list is a quieter question: is it the offer, or is it me? It's the offer. And it's fixable.</div><div class="mh-note">Use on: sales page · long-form posts · podcast intros · website above the fold</div></div></div>
+    <div class="bma-wrap">
+      <div class="bma-eyebrow">Your Brand Message Asset</div>
+      <div class="bma-title">Use This Everywhere</div>
+      <div class="bma-sub">Your brand in one paragraph. Ready for your website, proposals, pitches, and creative briefs.</div>
+      <div class="bma-text">
+        I work with <em class="bma-em">coaches and expert entrepreneurs launching or reinventing their offers</em> — people doing genuinely good work who can't get it to land, and who are starting to wonder if the problem is them. They want to feel confident about what they're selling, and to build something that actually matches the depth of what they deliver.
+        <hr class="bma-divider">
+        I help them get there through <em class="bma-em2">the OfferMojo&trade; Ecosystem</em> — a full-lifecycle process covering positioning, structure, offer design, messaging, visibility and sales — without <em class="bma-em2">the scattered, one-size-fits-all advice</em> that left them feeling stuck in the first place.
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- VOICE -->
+<section class="section" id="voice">
+  <div class="wrap">
+    <div class="s-label">Brand Personality</div>
+    <h2 class="s-h2">Voice &amp; Personality</h2>
+    <p class="s-note">Define the tone, energy, and style that make your brand feel recognizable, relatable, and real.</p>
+    <div class="voice-2">
+      <div class="is-c"><div class="v-head">You Are</div><div class="tags"><span class="tag">Empathetic</span><span class="tag">Energetic</span><span class="tag">Relatable</span><span class="tag">Genuine</span><span class="tag">Strategic</span></div></div>
+      <div class="not-c"><div class="v-head">You Are Not</div><div class="tags"><span class="tag">Cookie-Cutter</span><span class="tag">Hype-Driven</span><span class="tag">Hands-Off</span><span class="tag">Generic</span><span class="tag">Salesy</span></div></div>
+    </div>
+    <div class="vs-box">
+      <div class="vs-lbl">Voice in Action</div>
+      <div class="vs-txt">"You don't need one offer — you need an offer ecosystem, and right now you're trying to make one offer do six jobs."</div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PILLARS -->
+<section class="section" id="pillars">
+  <div class="wrap">
+    <div class="s-label">Your Thought Leadership</div>
+    <h2 class="s-h2">Your 5 Content Pillars</h2>
+    <p class="s-note">Five topics you own. Each one specific enough to create content from today.</p>
+    <div class="cp-r"><div class="cp-n">01</div><div><div class="cp-name">The Offer Ecosystem</div><div class="cp-msg">One offer can't do six jobs — here's what an ecosystem looks like instead.</div></div><div class="cp-ang"><span>Break down a real offer ladder (freebie → entry → core → retainer) and the job each rung does</span><span>"Here's the offer ecosystem I'd build if I were starting from your exact spot"</span><span>The common mistake: selling a retainer before there's a core offer to retain from</span><span>What changes in your pricing once your offers have a clear path between them</span></div></div>
+    <div class="cp-r"><div class="cp-n">02</div><div><div class="cp-name">Positioning Before Polish</div><div class="cp-msg">Your offer doesn't need better design. It needs a sharper sentence.</div></div><div class="cp-ang"><span>The one-sentence test: can you explain what you do in a way that makes someone say "wait, tell me more"?</span><span>A before/after positioning rewrite from a real intake conversation</span><span>Why "I help entrepreneurs grow their business" reaches no one</span><span>What it looks like when positioning is so specific it does the selling for you</span></div></div>
+    <div class="cp-r"><div class="cp-n">03</div><div><div class="cp-name">The Generalist's Reckoning</div><div class="cp-msg">Generalists are dying — and AI is the reason it's happening faster.</div></div><div class="cp-ang"><span>Your own story: eight years as a generalist, and the breakdown that forced the pivot</span><span>Why "I can help with anything" used to be a strength and is now a liability</span><span>What AI can replicate vs. what only a specialist can offer</span><span>The hard truth: niching down isn't shrinking — it's what makes you findable</span></div></div>
+    <div class="cp-r"><div class="cp-n">04</div><div><div class="cp-name">Behind the Pricing Conversation</div><div class="cp-msg">When the offer is built right, pricing stops being a negotiation.</div></div><div class="cp-ang"><span>The pricing-fight pattern: clients always want to charge less than the offer is worth</span><span>What changes on a sales call once your messaging has already done the convincing</span><span>"Neither of them even flinched" — what confident pricing actually sounds like</span><span>Reframe: pricing resistance is usually a positioning problem, not a confidence problem</span></div></div>
+    <div class="cp-r"><div class="cp-n">05</div><div><div class="cp-name">Behind On a Mission Brands</div><div class="cp-msg">I built the OfferMojo&trade; Method because I needed it myself first.</div></div><div class="cp-ang"><span>The desk conversation that forced you to specialize</span><span>What "on a mission" actually means — the philosophy behind the name</span><span>A day in the life building offer ecosystems for clients</span><span>Why offers, visibility, AI, marketing and relationships are the topics you always come back to — and how they connect</span></div></div>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT + ELEVATOR PITCH -->
+<section class="bs" id="statement">
+  <div class="bs-inner">
+    <div class="bs-top">The Payoff — Built From Everything Above</div>
+    <h2 class="bs-h">Your Brand Statement</h2>
+    <div class="bs-txt">Lori Young is the founder of On a Mission Brands, where she helps coaches and expert entrepreneurs turn scattered expertise into offer ecosystems that are impossible to ignore, easy to refer, and wildly buyable. After eight years as a generalist — and a breaking point that forced her to specialize — she built the OfferMojo&trade; Ecosystem, a full-lifecycle method covering positioning, structure, ecosystem design, messaging, visibility and sales. She works with clients through OfferMojo&trade; Studio, Sprints, and the AI-powered OfferMojo&trade; Squad, and is known for asking the questions that make people pause — then handing back language that finally sounds like them. <strong>Her clients don't just get a clearer offer — they get the confidence to stop explaining themselves and start being chosen.</strong></div>
+    <div class="ep-block">
+      <div class="ep-lbl">Your 30-Second Elevator Pitch</div>
+      <div class="ep-sub">Memorise this. Use it everywhere.</div>
+      <div class="ep-txt">My name is Lori Young and I work with coaches and expert entrepreneurs who are launching or reinventing their offers but can't get them to sell — even though the work itself is genuinely good. Most people in my position fix one piece: the copy, the funnel, or the mindset. I work across the whole offer lifecycle — positioning, structure, ecosystem, messaging, visibility and sales — through my OfferMojo&trade; Ecosystem, built from my own reinvention from generalist to specialist. The result: an offer ecosystem so specific that pricing stops feeling like a negotiation, and clients stop wondering if the problem was them.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK WINS -->
+<section class="section" id="wins">
+  <div class="wrap">
+    <div class="s-label">What to Do This Month</div>
+    <h2 class="s-h2">Your Quick Wins</h2>
+    <p class="s-note">Simple actions you can take this month to build real momentum for your brand.</p>
+    <div class="wt">
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Choose Your One Signature Line</div><div class="wi-desc">Your strongest differentiator — that you work across the entire offer lifecycle, not one slice of it — currently shows up in three different forms across your story, your homepage, and your intake answers. Pick one version ("Most coaches focus on one piece. I work across the full system.") and use it as your bio opener, your call opener, and your content sign-off for the next 30 days.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 1</div><div class="wi-ttl">Meet Her Before the "Authority" Moment</div><div class="wi-desc">Your homepage opens with the destination — "Stop Blending In. Claim Your Expertise." Add one section above it that names where she actually is right now, using the Hook from this Blueprint: "You launched it. You're proud of it. So why isn't it selling?" Let her recognize herself before you talk about where she's headed.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 2</div><div class="wi-ttl">Pick the Front Door</div><div class="wi-desc">Your ideal-client answer names two people: the founder launching their first offer, and the established expert pivoting. Choose one to lead with in your bio and discovery-call script for the next month — likely the pivoting expert, since your case studies (Andrea, Ilana, Bradley) all describe that journey. The other audience will still recognize themselves; they just won't be first.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 3</div><div class="wi-ttl">Codify the Psychographic Profile</div><div class="wi-desc">The impostor syndrome, the "is it me or the brand" fear, the comparison to others who "seem to have it figured out" — this language is gold, and right now it lives mostly in your head and your client conversations. Add two or three of these exact phrases to your Offer X-Ray intake questions, so prospects see themselves reflected before they ever talk to you.</div></div>
+      <div class="wi"><div class="wi-dot"></div><div class="wi-when">Week 4</div><div class="wi-ttl">Name the Pricing Pattern</div><div class="wi-desc">Every client story in your answers follows the same arc: undercharging, a pricing pushback, and a client who "didn't even flinch" once they raised their price. This pattern is repeatable and provable — turn it into a short video, blog post, or lead magnet ("Why You're Underpricing — And What Changes When Your Offer Catches Up"). It's the deepest proof of your method, and right now it's buried inside testimonials.</div></div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- BRAND FUTURE -->
+<section class="section" style="padding:0">
+  <div class="wrap" style="padding-top:80px;padding-bottom:0">
+    <div class="brand-future">
+      <div class="bf-lbl">Your Brand Future</div>
+      <div class="bf-h">You are on your way to becoming the <em>go-to offer strategist</em> for coaches and expert entrepreneurs who know their work is good but can't yet get it to land. As the OfferMojo&trade; Ecosystem becomes the language your clients use to describe themselves — not just the service they bought — your name becomes the answer to <em>"who do I call when my offers aren't working?"</em> The generalists you've already left behind keep competing on price and visibility. You compete on <em>clarity</em> — and clarity is the one thing AI can't fake.</div>
+    </div>
+  </div>
+</section>
+
+<!-- UPSELLS -->
+<section class="section" id="cta" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="s-label">Ready to Go Further?</div>
+    <h2 class="s-h2">Work With Mallika</h2>
+    <p class="s-note" style="margin-bottom:32px">Two ways to keep building. Choose what fits where you are right now.</p>
+    <div class="upsell-grid">
+      <div class="upsell-card">
+        <span class="upsell-type">Discussion &amp; Review</span>
+        <div class="upsell-price">$297</div>
+        <div class="upsell-name">VIP Brand Strategy Session</div>
+        <div class="upsell-tag">One hour. Real strategy. Just the two of us.</div>
+        <div class="upsell-desc">We sit down together and go through your Blueprint in depth. We pressure-test your positioning, make sure your messaging is airtight, and answer every question you have before you start executing. You leave with absolute clarity on your next move — and none of the second-guessing.</div>
+        <a href="https://mikifoto.podia.com/vip-brand-strategy-session" class="upsell-btn">Book Your Session &rarr;</a>
+      </div>
+      <div class="upsell-card featured">
+        <span class="upsell-type">Done-With-You &amp; Done-For-You</span>
+        <div class="upsell-price">$4,500</div>
+        <div class="upsell-name">3-Month Private Mentorship</div>
+        <div class="upsell-tag">This is where strategy becomes reality.</div>
+        <div class="upsell-desc">We do not just talk about what your brand could be — we build it together, and in some areas, we build it for you. Your positioning goes live. Your messaging gets written. Your method gets named. Your content engine gets running. Three months of Mallika in your corner, from strategy through execution, start to finish.</div>
+        <a href="https://thebrandceo.com/contact" class="upsell-btn">Apply Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="f-l">
+    <img class="f-logo" src="https://res.cloudinary.com/dwsbpbngv/image/upload/v1781168053/the-brand-ceo-horizontal-with-mm-blue-brand-logos-rgb-1200px-w-300ppi_rfaphs.png" alt="The Brand CEO" onerror="this.style.display='none'">
+  </div>
+  <div class="f-r">BullsEye Brand Blueprint™ &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; <span id="footer-date"></span></div>
+</div>
+
+</div><!-- /report-wrap -->
+
+<script>
+function generatePDF(){
+  var btn = document.getElementById("pdf-btn");
+  btn.textContent = "Preparing\u2026";
+  btn.style.pointerEvents = "none";
+
+  var old = document.getElementById("print-frame");
+  if(old) old.parentNode.removeChild(old);
+
+  var PAGE_W = 1040;
+
+  var iframe = document.createElement("iframe");
+  iframe.id = "print-frame";
+  iframe.style.cssText = "position:fixed;top:-9999px;left:-9999px;width:"+PAGE_W+"px;height:100px;border:none;";
+  document.body.appendChild(iframe);
+
+  var styleEl = document.querySelector("style");
+  var reportHTML = document.getElementById("report-wrap").innerHTML;
+
+  var printOverrides = "" +
+    "html,body{width:"+PAGE_W+"px!important;margin:0!important;padding:0!important}" +
+    ".dl,.cp-section-strip{display:none!important}" +
+    ".cover-page{height:auto!important;min-height:auto!important;max-height:none!important;border-bottom:none!important;padding:60px 0 40px}" +
+    ".cp-header{display:none!important}" +
+    "hr.divider{display:none!important}" +
+    ".section{page-break-before:auto!important;break-before:auto!important;padding:48px 0!important}" +
+    "section.bs{page-break-before:auto!important;break-before:auto!important}" +
+    ".footer{page-break-before:avoid!important;break-before:avoid!important;page-break-inside:avoid!important}" +
+    "@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}";
+
+  var doc = '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+    '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Dancing+Script:wght@600&family=Oswald:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">' +
+    '<style>' + styleEl.textContent + printOverrides + '</style></head><body>' +
+    reportHTML +
+    '</body></html>';
+
+  iframe.contentDocument.open();
+  iframe.contentDocument.write(doc);
+  iframe.contentDocument.close();
+
+  function setPageSize(idoc, w, extra){
+    var h = Math.ceil(idoc.documentElement.scrollHeight) + extra;
+    iframe.style.height = h + "px";
+    var old = idoc.getElementById("dyn-page-style");
+    if(old) old.remove();
+    var pageStyle = idoc.createElement("style");
+    pageStyle.id = "dyn-page-style";
+    pageStyle.textContent = "@page{size:" + w + "px " + h + "px; margin:0}";
+    idoc.head.appendChild(pageStyle);
+    return h;
+  }
+
+  function waitForImages(idoc, cb){
+    var imgs = idoc.querySelectorAll("img");
+    var pending = 0;
+    imgs.forEach(function(img){
+      if(!img.complete){
+        pending++;
+        img.addEventListener("load", done);
+        img.addEventListener("error", done);
+      }
+    });
+    function done(){ pending--; if(pending<=0) cb(); }
+    if(pending===0) cb();
+  }
+
+  setTimeout(function(){
+    var idoc = iframe.contentDocument;
+    waitForImages(idoc, function(){
+      setPageSize(idoc, PAGE_W, 0);
+      setTimeout(function(){
+        setPageSize(idoc, PAGE_W, 200);
+        setTimeout(function(){
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          btn.innerHTML = "&#8659; Save as PDF";
+          btn.style.pointerEvents = "";
+        }, 300);
+      }, 400);
+    });
+  }, 600);
+}
+(function(){
+  var d = new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  ["footer-date","cover-date"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.textContent = d;
+  });
+})();
+</script>
+</body>
+</html>
